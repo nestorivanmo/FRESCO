@@ -33,23 +33,22 @@ class DatosGeneralesTableViewController: UITableViewController {
         super.viewDidLoad()
         birthdayDatePickerView.date = Date().addingTimeInterval(24*60*60)
         updateBirthdayLabel(date: birthdayDatePickerView.date)
-        addToolbars()
+        guard let patient = self.patient else {return}
+        self.updatePatientData(from: patient)
+        updateUIState()
     }
     
-    func updateSaveButton() {
-        let nameText = nameTextField.text ?? ""
-        let ageText = ageTextField.text ?? ""
-        let weightText = weightTextField.text ?? ""
-        let heightText = heightTextField.text ?? ""
-        saveButton.isEnabled = !nameText.isEmpty && !ageText.isEmpty && !weightText.isEmpty && !heightText.isEmpty
+    func updateUIState() {
+        self.updateSaveButton()
+        self.addToolbars()
     }
     
     func updatePatientData(from patient: Patient) {
         self.nameTextField.text = patient.name
         self.sexSegmentedControl.selectedSegmentIndex = (patient.sex == Sex.female) ? 0:1
         self.ageTextField.text = String(patient.age)
-        self.weightTextField.text = String(patient.weight)
-        self.heightTextField.text = String(patient.height)
+        self.weightTextField.text = String(Int(patient.weight))
+        self.heightTextField.text = String(Int(patient.height))
         self.birthdayDatePickerView.date = patient.birthday
         self.birthdayLabel.text = birhtdayDayFormatter.string(from: patient.birthday)
         addToolbars()
@@ -61,16 +60,15 @@ class DatosGeneralesTableViewController: UITableViewController {
         
         self.patient = Patient(name: nameTextField.text ?? "", birthday: birthdayDatePickerView.date, age: Int(ageTextField.text!)!, sex: getSex(), weight: Float(weightTextField.text!)!, height: Float(heightTextField.text!)!)
     }
-    
 
 }
 
 extension DatosGeneralesTableViewController {
     @IBAction func nameTextFieldChanged(_ sender: Any) {
-        updateSaveButton()
+        updateUIState()
     }
     @IBAction func sexSegmentedControlChanged(_ sender: Any) {
-        updateSaveButton()
+        updateUIState()
     }
     
     func getSex() -> Sex{
@@ -82,15 +80,15 @@ extension DatosGeneralesTableViewController {
     }
     
     @IBAction func ageTextFieldChanged(_ sender: Any) {
-        updateSaveButton()
+        updateUIState()
     }
     
     @IBAction func weightTextFieldChanged(_ sender: Any) {
-        updateSaveButton()
+        updateUIState()
     }
     
     @IBAction func heightTextFieldChanged(_ sender: Any) {
-        updateSaveButton()
+        updateUIState()
     }
     @IBAction func nameTextFieldReturnedPressed(_ sender: Any) {
         nameTextField.resignFirstResponder()
@@ -100,7 +98,7 @@ extension DatosGeneralesTableViewController {
 extension DatosGeneralesTableViewController {
     @IBAction func birthdayDatePickerChanged(_ sender: Any) {
         updateBirthdayLabel(date: birthdayDatePickerView.date)
-        updateSaveButton()
+        updateUIState()
     }
     func updateBirthdayLabel(date: Date) {
         birthdayLabel.text = self.birhtdayDayFormatter.string(from: date)
@@ -116,6 +114,7 @@ extension DatosGeneralesTableViewController {
         }
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
         switch indexPath {
         case [5,0]:
             isBirthdayDatePickerHidden = !isBirthdayDatePickerHidden
@@ -143,21 +142,18 @@ extension DatosGeneralesTableViewController {
 
 extension DatosGeneralesTableViewController {
    
-    func addToolbars() {
-        addToolbar(to: ageTextField)
-        addToolbar(to: weightTextField)
-        addToolbar(to: heightTextField)
+    func updateSaveButton() {
+       let nameText = nameTextField.text ?? ""
+       let ageText = ageTextField.text ?? ""
+       let weightText = weightTextField.text ?? ""
+       let heightText = heightTextField.text ?? ""
+       saveButton.isEnabled = !nameText.isEmpty && !ageText.isEmpty && !weightText.isEmpty && !heightText.isEmpty
     }
     
-    func addToolbar(to target: UITextField) {
-        let textFieldToolbar = UIToolbar()
-        let doneBarButtonItem = UIBarButtonItem.init(barButtonSystemItem: .done, target: target, action: #selector(UITextField.resignFirstResponder))
-        doneBarButtonItem.tintColor = #colorLiteral(red: 0.9361700416, green: 0.4429646432, blue: 0.3427112997, alpha: 1)
-        textFieldToolbar.items = [
-            doneBarButtonItem,
-            UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
-        ]
-        textFieldToolbar.sizeToFit()
-        target.inputAccessoryView = textFieldToolbar
+    func addToolbars() {
+        ViewFormatter.addToolbar(to: ageTextField)
+        ViewFormatter.addToolbar(to: weightTextField)
+        ViewFormatter.addToolbar(to: heightTextField)
     }
+    
 }

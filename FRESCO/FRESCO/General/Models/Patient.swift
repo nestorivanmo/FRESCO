@@ -8,26 +8,40 @@
 
 import Foundation
 
-struct Patient {
+struct Patient: Codable {
     var name: String
     var birthday: Date
     var age: Int
     var sex: Sex
     var weight: Float
     var height: Float
-    lazy var imc: Float? = nil
-    lazy var physicalActivity: Float? = nil
-    
-    init(name: String, birthday: Date, age: Int, sex: Sex, weight: Float, height: Float) {
-        self.name = name
-        self.birthday = birthday
-        self.age = age
-        self.sex = sex
-        self.weight = weight
-        self.height = height
-    }
+    var imc: IMC? = nil
+    var pa: PhysicalActivity? = nil
 }
 
-enum Sex {
+extension Patient {
+    
+    mutating func doSomeMath() {
+        self.imc = MathManager.calculateIMC(from: self)
+    }
+    
+}
+
+enum Sex: String, Codable {
     case female, male
+}
+
+extension Patient {
+    static let DocumentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+    static let ArchiveURL = DocumentsDirectory.appendingPathComponent("patients").appendingPathExtension("plist")
+    static func loadPatient() -> Patient? {
+        guard let codedPatient = try? Data(contentsOf: ArchiveURL) else {return nil}
+        let decoder = PropertyListDecoder()
+        return try? decoder.decode(Patient.self, from: codedPatient)
+    }
+    static func save(_ patient: Patient) {
+        let encoder = PropertyListEncoder()
+        let encodedPatient = try? encoder.encode(patient)
+        try? encodedPatient?.write(to: ArchiveURL, options: .noFileProtection)
+    }
 }

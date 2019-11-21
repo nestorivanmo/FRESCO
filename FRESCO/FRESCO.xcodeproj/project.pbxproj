@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B22891E023872C8200B54E32 /* PhysicalActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22891DF23872C8200B54E32 /* PhysicalActivity.swift */; };
+		B22891E223872FC300B54E32 /* ViewFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22891E123872FC300B54E32 /* ViewFormatter.swift */; };
 		B25CF3F22386E0EE00737E5C /* GeneralTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25CF3F12386E0EE00737E5C /* GeneralTableViewController.swift */; };
 		B25CF3F52386E11200737E5C /* DatosGeneralesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25CF3F42386E11200737E5C /* DatosGeneralesTableViewController.swift */; };
 		B299AF6723858CEA000F31A3 /* FCATableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B299AF6623858CEA000F31A3 /* FCATableViewController.swift */; };
@@ -36,12 +38,16 @@
 		B29B4DF923857C65002C738E /* SF-Pro-Text-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = B29B4DE723857C65002C738E /* SF-Pro-Text-Medium.otf */; };
 		B2AF0D5D2385930E0011E57C /* FCA.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AF0D5C2385930E0011E57C /* FCA.swift */; };
 		B2AF0D5F238596DD0011E57C /* FCADetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AF0D5E238596DD0011E57C /* FCADetailTableViewController.swift */; };
+		B2B0DB5D2387245F00C34C0F /* IMC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B0DB5C2387245F00C34C0F /* IMC.swift */; };
+		B2B0DB5F2387249300C34C0F /* MathManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B0DB5E2387249300C34C0F /* MathManager.swift */; };
 		B2D47CF82386543400A067A7 /* IntroductionPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D47CF72386543400A067A7 /* IntroductionPageViewController.swift */; };
 		B2D8F0612386F8A100350986 /* Patient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D8F0602386F8A100350986 /* Patient.swift */; };
 		B2EFA16E2386F6DB0092D998 /* FixedSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2EFA16D2386F6DB0092D998 /* FixedSize.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B22891DF23872C8200B54E32 /* PhysicalActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysicalActivity.swift; sourceTree = "<group>"; };
+		B22891E123872FC300B54E32 /* ViewFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewFormatter.swift; sourceTree = "<group>"; };
 		B25CF3F12386E0EE00737E5C /* GeneralTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralTableViewController.swift; sourceTree = "<group>"; };
 		B25CF3F42386E11200737E5C /* DatosGeneralesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatosGeneralesTableViewController.swift; sourceTree = "<group>"; };
 		B299AF6623858CEA000F31A3 /* FCATableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FCATableViewController.swift; sourceTree = "<group>"; };
@@ -73,6 +79,8 @@
 		B29B4DE723857C65002C738E /* SF-Pro-Text-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Medium.otf"; sourceTree = "<group>"; };
 		B2AF0D5C2385930E0011E57C /* FCA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FCA.swift; sourceTree = "<group>"; };
 		B2AF0D5E238596DD0011E57C /* FCADetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FCADetailTableViewController.swift; sourceTree = "<group>"; };
+		B2B0DB5C2387245F00C34C0F /* IMC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMC.swift; sourceTree = "<group>"; };
+		B2B0DB5E2387249300C34C0F /* MathManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathManager.swift; sourceTree = "<group>"; };
 		B2D47CF72386543400A067A7 /* IntroductionPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroductionPageViewController.swift; sourceTree = "<group>"; };
 		B2D8F0602386F8A100350986 /* Patient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Patient.swift; sourceTree = "<group>"; };
 		B2EFA16D2386F6DB0092D998 /* FixedSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixedSize.swift; sourceTree = "<group>"; };
@@ -144,6 +152,7 @@
 		B29B4DC0238578AE002C738E /* FRESCO */ = {
 			isa = PBXGroup;
 			children = (
+				B2B0DB5B238723D400C34C0F /* SharedModels */,
 				B299AF6C23858F2F000F31A3 /* InitialScreen */,
 				B25CF3F02386E0CE00737E5C /* General */,
 				B299AF6823858CF2000F31A3 /* FCA */,
@@ -201,6 +210,15 @@
 			path = FCADetail;
 			sourceTree = "<group>";
 		};
+		B2B0DB5B238723D400C34C0F /* SharedModels */ = {
+			isa = PBXGroup;
+			children = (
+				B2B0DB5E2387249300C34C0F /* MathManager.swift */,
+				B22891E123872FC300B54E32 /* ViewFormatter.swift */,
+			);
+			path = SharedModels;
+			sourceTree = "<group>";
+		};
 		B2D47CFF2386552000A067A7 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
@@ -213,6 +231,8 @@
 			isa = PBXGroup;
 			children = (
 				B2D8F0602386F8A100350986 /* Patient.swift */,
+				B2B0DB5C2387245F00C34C0F /* IMC.swift */,
+				B22891DF23872C8200B54E32 /* PhysicalActivity.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -315,12 +335,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				B25CF3F22386E0EE00737E5C /* GeneralTableViewController.swift in Sources */,
+				B22891E223872FC300B54E32 /* ViewFormatter.swift in Sources */,
+				B2B0DB5D2387245F00C34C0F /* IMC.swift in Sources */,
 				B299AF6723858CEA000F31A3 /* FCATableViewController.swift in Sources */,
+				B2B0DB5F2387249300C34C0F /* MathManager.swift in Sources */,
 				B2D47CF82386543400A067A7 /* IntroductionPageViewController.swift in Sources */,
 				B2AF0D5F238596DD0011E57C /* FCADetailTableViewController.swift in Sources */,
 				B2AF0D5D2385930E0011E57C /* FCA.swift in Sources */,
 				B2EFA16E2386F6DB0092D998 /* FixedSize.swift in Sources */,
 				B29B4DC6238578AE002C738E /* ViewController.swift in Sources */,
+				B22891E023872C8200B54E32 /* PhysicalActivity.swift in Sources */,
 				B25CF3F52386E11200737E5C /* DatosGeneralesTableViewController.swift in Sources */,
 				B29B4DC2238578AE002C738E /* AppDelegate.swift in Sources */,
 				B29B4DC4238578AE002C738E /* SceneDelegate.swift in Sources */,
