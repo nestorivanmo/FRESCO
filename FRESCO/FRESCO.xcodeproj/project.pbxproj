@@ -37,6 +37,8 @@
 		B2AF0D5D2385930E0011E57C /* FCA.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AF0D5C2385930E0011E57C /* FCA.swift */; };
 		B2AF0D5F238596DD0011E57C /* FCADetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AF0D5E238596DD0011E57C /* FCADetailTableViewController.swift */; };
 		B2D47CF82386543400A067A7 /* IntroductionPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D47CF72386543400A067A7 /* IntroductionPageViewController.swift */; };
+		B2D8F0612386F8A100350986 /* Patient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D8F0602386F8A100350986 /* Patient.swift */; };
+		B2EFA16E2386F6DB0092D998 /* FixedSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2EFA16D2386F6DB0092D998 /* FixedSize.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +74,8 @@
 		B2AF0D5C2385930E0011E57C /* FCA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FCA.swift; sourceTree = "<group>"; };
 		B2AF0D5E238596DD0011E57C /* FCADetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FCADetailTableViewController.swift; sourceTree = "<group>"; };
 		B2D47CF72386543400A067A7 /* IntroductionPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroductionPageViewController.swift; sourceTree = "<group>"; };
+		B2D8F0602386F8A100350986 /* Patient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Patient.swift; sourceTree = "<group>"; };
+		B2EFA16D2386F6DB0092D998 /* FixedSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixedSize.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +92,7 @@
 		B25CF3F02386E0CE00737E5C /* General */ = {
 			isa = PBXGroup;
 			children = (
+				B2D8F05F2386F89900350986 /* Models */,
 				B25CF3F32386E10900737E5C /* DatosGenerales */,
 				B25CF3F12386E0EE00737E5C /* GeneralTableViewController.swift */,
 			);
@@ -139,7 +144,6 @@
 		B29B4DC0238578AE002C738E /* FRESCO */ = {
 			isa = PBXGroup;
 			children = (
-				B2D47CFF2386552000A067A7 /* Tests */,
 				B299AF6C23858F2F000F31A3 /* InitialScreen */,
 				B25CF3F02386E0CE00737E5C /* General */,
 				B299AF6823858CF2000F31A3 /* FCA */,
@@ -149,6 +153,8 @@
 				B29B4DCA238578B0002C738E /* Assets.xcassets */,
 				B29B4DCC238578B0002C738E /* LaunchScreen.storyboard */,
 				B29B4DCF238578B0002C738E /* Info.plist */,
+				B2D47CFF2386552000A067A7 /* Tests */,
+				B2EFA16C2386F6C90092D998 /* FixedSizes */,
 				B29B4DD523857B44002C738E /* Fonts */,
 			);
 			path = FRESCO;
@@ -201,6 +207,22 @@
 				B2D47CF72386543400A067A7 /* IntroductionPageViewController.swift */,
 			);
 			path = Tests;
+			sourceTree = "<group>";
+		};
+		B2D8F05F2386F89900350986 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B2D8F0602386F8A100350986 /* Patient.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		B2EFA16C2386F6C90092D998 /* FixedSizes */ = {
+			isa = PBXGroup;
+			children = (
+				B2EFA16D2386F6DB0092D998 /* FixedSize.swift */,
+			);
+			path = FixedSizes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -297,10 +319,12 @@
 				B2D47CF82386543400A067A7 /* IntroductionPageViewController.swift in Sources */,
 				B2AF0D5F238596DD0011E57C /* FCADetailTableViewController.swift in Sources */,
 				B2AF0D5D2385930E0011E57C /* FCA.swift in Sources */,
+				B2EFA16E2386F6DB0092D998 /* FixedSize.swift in Sources */,
 				B29B4DC6238578AE002C738E /* ViewController.swift in Sources */,
 				B25CF3F52386E11200737E5C /* DatosGeneralesTableViewController.swift in Sources */,
 				B29B4DC2238578AE002C738E /* AppDelegate.swift in Sources */,
 				B29B4DC4238578AE002C738E /* SceneDelegate.swift in Sources */,
+				B2D8F0612386F8A100350986 /* Patient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

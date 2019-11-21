@@ -17,26 +17,70 @@ class DatosGeneralesTableViewController: UITableViewController {
     @IBOutlet weak var heightTextField: UITextField!
     @IBOutlet weak var birthdayLabel: UILabel!
     @IBOutlet weak var birthdayDatePickerView: UIDatePicker!
-    var isBirthdayDatePickerHidden = true
+    @IBOutlet weak var saveButton: UIBarButtonItem!
     
+    var isBirthdayDatePickerHidden = true
     let birhtdayDayFormatter: DateFormatter = {
             let formatter = DateFormatter()
         formatter.dateStyle = .short
         return formatter
     }()
+    var toolbarIndex = 0
+    
+    var patient: Patient?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.clearsSelectionOnViewWillAppear = false
         birthdayDatePickerView.date = Date().addingTimeInterval(24*60*60)
         updateBirthdayLabel(date: birthdayDatePickerView.date)
+        addToolbar(to: ageTextField)
+        addToolbar(to: weightTextField)
+        addToolbar(to: heightTextField)
     }
     
+    func updateSaveButton() {
+        let nameText = nameTextField.text ?? ""
+        let ageText = ageTextField.text ?? ""
+        let weightText = weightTextField.text ?? ""
+        let heightText = heightTextField.text ?? ""
+        saveButton.isEnabled = !nameText.isEmpty && !ageText.isEmpty && !weightText.isEmpty && !heightText.isEmpty
+    }
+    
+    func getSex() -> Sex{
+        let index = sexSegmentedControl.selectedSegmentIndex
+        if index == 0 {
+            return .female
+        }
+        return .male
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
+        guard segue.identifier == "SavePatient" else {return}
+        
+        self.patient = Patient(name: nameTextField.text ?? "", birthday: birthdayDatePickerView.date, age: Int(ageTextField.text!)!, sex: getSex(), weight: Float(weightTextField.text!)!, height: Float(heightTextField.text!)!)
+    }
+
 }
 
 extension DatosGeneralesTableViewController {
     @IBAction func nameTextFieldChanged(_ sender: Any) {
-        
+        updateSaveButton()
+    }
+    @IBAction func sexSegmentedControlChanged(_ sender: Any) {
+        updateSaveButton()
+    }
+    
+    @IBAction func ageTextFieldChanged(_ sender: Any) {
+        updateSaveButton()
+    }
+    
+    @IBAction func weightTextFieldChanged(_ sender: Any) {
+        updateSaveButton()
+    }
+    
+    @IBAction func heightTextFieldChanged(_ sender: Any) {
+        updateSaveButton()
     }
     @IBAction func nameTextFieldReturnedPressed(_ sender: Any) {
         nameTextField.resignFirstResponder()
@@ -46,6 +90,7 @@ extension DatosGeneralesTableViewController {
 extension DatosGeneralesTableViewController {
     @IBAction func birthdayDatePickerChanged(_ sender: Any) {
         updateBirthdayLabel(date: birthdayDatePickerView.date)
+        updateSaveButton()
     }
     func updateBirthdayLabel(date: Date) {
         birthdayLabel.text = self.birhtdayDayFormatter.string(from: date)
@@ -70,5 +115,32 @@ extension DatosGeneralesTableViewController {
         default:
             break
         }
+    }
+}
+
+extension DatosGeneralesTableViewController {
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let sectionTitle: String = self.tableView(tableView, titleForHeaderInSection: section) ?? ""
+        let title = UILabel()
+        title.text = sectionTitle
+        title.textColor = .label
+        title.backgroundColor = .clear
+        title.font = UIFont(name: FixedSize.font, size: FixedSize.tableViewHeaderSize)
+        title.font = UIFont.boldSystemFont(ofSize: FixedSize.tableViewHeaderSize)
+        return title
+    }
+}
+
+extension DatosGeneralesTableViewController {
+    func addToolbar(to target: UITextField) {
+        let textFieldToolbar = UIToolbar()
+        let doneBarButtonItem = UIBarButtonItem.init(barButtonSystemItem: .done, target: target, action: #selector(UITextField.resignFirstResponder))
+        doneBarButtonItem.tintColor = #colorLiteral(red: 0.9361700416, green: 0.4429646432, blue: 0.3427112997, alpha: 1)
+        textFieldToolbar.items = [
+            doneBarButtonItem,
+            UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
+        ]
+        textFieldToolbar.sizeToFit()
+        target.inputAccessoryView = textFieldToolbar
     }
 }

@@ -49,8 +49,8 @@ class FCATableViewController: UITableViewController {
         title.text = sectionTitle
         title.textColor = .label
         title.backgroundColor = .clear
-        title.font = UIFont(name: "SF Pro Text", size: 25)
-        title.font = UIFont.boldSystemFont(ofSize: 25)
+        title.font = UIFont(name: FixedSize.font, size: FixedSize.tableViewHeaderSize)
+        title.font = UIFont.boldSystemFont(ofSize: FixedSize.tableViewHeaderSize)
         
         return title
     }

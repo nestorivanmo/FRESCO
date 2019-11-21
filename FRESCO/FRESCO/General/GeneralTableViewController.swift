@@ -13,11 +13,24 @@ class GeneralTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+    }
+    
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let sectionTitle: String = self.tableView(tableView, titleForHeaderInSection: section)!
+        let title = UILabel()
+        title.text = sectionTitle
+        title.textColor = .label
+        title.backgroundColor = .clear
+        title.font = UIFont(name: FixedSize.font, size: FixedSize.tableViewHeaderSize)
+        title.font = UIFont.boldSystemFont(ofSize: FixedSize.tableViewHeaderSize)
+        return title
+    }
+    
+    @IBAction func unwindFromGeneralData(_ segue: UIStoryboardSegue) {
+        guard segue.identifier == "SavePatient" else {return}
+        let sourceViewController = segue.source as! DatosGeneralesTableViewController
+        guard let patient = sourceViewController.patient else {return}
+        print(patient)
     }
 
 }
