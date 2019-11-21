@@ -33,9 +33,7 @@ class DatosGeneralesTableViewController: UITableViewController {
         super.viewDidLoad()
         birthdayDatePickerView.date = Date().addingTimeInterval(24*60*60)
         updateBirthdayLabel(date: birthdayDatePickerView.date)
-        addToolbar(to: ageTextField)
-        addToolbar(to: weightTextField)
-        addToolbar(to: heightTextField)
+        addToolbars()
     }
     
     func updateSaveButton() {
@@ -46,12 +44,15 @@ class DatosGeneralesTableViewController: UITableViewController {
         saveButton.isEnabled = !nameText.isEmpty && !ageText.isEmpty && !weightText.isEmpty && !heightText.isEmpty
     }
     
-    func getSex() -> Sex{
-        let index = sexSegmentedControl.selectedSegmentIndex
-        if index == 0 {
-            return .female
-        }
-        return .male
+    func updatePatientData(from patient: Patient) {
+        self.nameTextField.text = patient.name
+        self.sexSegmentedControl.selectedSegmentIndex = (patient.sex == Sex.female) ? 0:1
+        self.ageTextField.text = String(patient.age)
+        self.weightTextField.text = String(patient.weight)
+        self.heightTextField.text = String(patient.height)
+        self.birthdayDatePickerView.date = patient.birthday
+        self.birthdayLabel.text = birhtdayDayFormatter.string(from: patient.birthday)
+        addToolbars()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -60,6 +61,7 @@ class DatosGeneralesTableViewController: UITableViewController {
         
         self.patient = Patient(name: nameTextField.text ?? "", birthday: birthdayDatePickerView.date, age: Int(ageTextField.text!)!, sex: getSex(), weight: Float(weightTextField.text!)!, height: Float(heightTextField.text!)!)
     }
+    
 
 }
 
@@ -69,6 +71,14 @@ extension DatosGeneralesTableViewController {
     }
     @IBAction func sexSegmentedControlChanged(_ sender: Any) {
         updateSaveButton()
+    }
+    
+    func getSex() -> Sex{
+        let index = sexSegmentedControl.selectedSegmentIndex
+        if index == 0 {
+            return .female
+        }
+        return .male
     }
     
     @IBAction func ageTextFieldChanged(_ sender: Any) {
@@ -132,6 +142,13 @@ extension DatosGeneralesTableViewController {
 }
 
 extension DatosGeneralesTableViewController {
+   
+    func addToolbars() {
+        addToolbar(to: ageTextField)
+        addToolbar(to: weightTextField)
+        addToolbar(to: heightTextField)
+    }
+    
     func addToolbar(to target: UITextField) {
         let textFieldToolbar = UIToolbar()
         let doneBarButtonItem = UIBarButtonItem.init(barButtonSystemItem: .done, target: target, action: #selector(UITextField.resignFirstResponder))
