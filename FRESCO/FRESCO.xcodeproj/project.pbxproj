@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B25CF3F22386E0EE00737E5C /* GeneralTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25CF3F12386E0EE00737E5C /* GeneralTableViewController.swift */; };
+		B25CF3F52386E11200737E5C /* DatosGeneralesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25CF3F42386E11200737E5C /* DatosGeneralesTableViewController.swift */; };
 		B299AF6723858CEA000F31A3 /* FCATableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B299AF6623858CEA000F31A3 /* FCATableViewController.swift */; };
 		B29B4DC2238578AE002C738E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29B4DC1238578AE002C738E /* AppDelegate.swift */; };
 		B29B4DC4238578AE002C738E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29B4DC3238578AE002C738E /* SceneDelegate.swift */; };
@@ -34,9 +36,12 @@
 		B29B4DF923857C65002C738E /* SF-Pro-Text-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = B29B4DE723857C65002C738E /* SF-Pro-Text-Medium.otf */; };
 		B2AF0D5D2385930E0011E57C /* FCA.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AF0D5C2385930E0011E57C /* FCA.swift */; };
 		B2AF0D5F238596DD0011E57C /* FCADetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AF0D5E238596DD0011E57C /* FCADetailTableViewController.swift */; };
+		B2D47CF82386543400A067A7 /* IntroductionPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D47CF72386543400A067A7 /* IntroductionPageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B25CF3F12386E0EE00737E5C /* GeneralTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralTableViewController.swift; sourceTree = "<group>"; };
+		B25CF3F42386E11200737E5C /* DatosGeneralesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatosGeneralesTableViewController.swift; sourceTree = "<group>"; };
 		B299AF6623858CEA000F31A3 /* FCATableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FCATableViewController.swift; sourceTree = "<group>"; };
 		B29B4DBE238578AE002C738E /* FRESCO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FRESCO.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B29B4DC1238578AE002C738E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -66,6 +71,7 @@
 		B29B4DE723857C65002C738E /* SF-Pro-Text-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Medium.otf"; sourceTree = "<group>"; };
 		B2AF0D5C2385930E0011E57C /* FCA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FCA.swift; sourceTree = "<group>"; };
 		B2AF0D5E238596DD0011E57C /* FCADetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FCADetailTableViewController.swift; sourceTree = "<group>"; };
+		B2D47CF72386543400A067A7 /* IntroductionPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroductionPageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +85,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B25CF3F02386E0CE00737E5C /* General */ = {
+			isa = PBXGroup;
+			children = (
+				B25CF3F32386E10900737E5C /* DatosGenerales */,
+				B25CF3F12386E0EE00737E5C /* GeneralTableViewController.swift */,
+			);
+			path = General;
+			sourceTree = "<group>";
+		};
+		B25CF3F32386E10900737E5C /* DatosGenerales */ = {
+			isa = PBXGroup;
+			children = (
+				B25CF3F42386E11200737E5C /* DatosGeneralesTableViewController.swift */,
+			);
+			path = DatosGenerales;
+			sourceTree = "<group>";
+		};
 		B299AF6823858CF2000F31A3 /* FCA */ = {
 			isa = PBXGroup;
 			children = (
@@ -116,7 +139,9 @@
 		B29B4DC0238578AE002C738E /* FRESCO */ = {
 			isa = PBXGroup;
 			children = (
+				B2D47CFF2386552000A067A7 /* Tests */,
 				B299AF6C23858F2F000F31A3 /* InitialScreen */,
+				B25CF3F02386E0CE00737E5C /* General */,
 				B299AF6823858CF2000F31A3 /* FCA */,
 				B29B4DC1238578AE002C738E /* AppDelegate.swift */,
 				B29B4DC3238578AE002C738E /* SceneDelegate.swift */,
@@ -168,6 +193,14 @@
 				B2AF0D5E238596DD0011E57C /* FCADetailTableViewController.swift */,
 			);
 			path = FCADetail;
+			sourceTree = "<group>";
+		};
+		B2D47CFF2386552000A067A7 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				B2D47CF72386543400A067A7 /* IntroductionPageViewController.swift */,
+			);
+			path = Tests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,10 +292,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B25CF3F22386E0EE00737E5C /* GeneralTableViewController.swift in Sources */,
 				B299AF6723858CEA000F31A3 /* FCATableViewController.swift in Sources */,
+				B2D47CF82386543400A067A7 /* IntroductionPageViewController.swift in Sources */,
 				B2AF0D5F238596DD0011E57C /* FCADetailTableViewController.swift in Sources */,
 				B2AF0D5D2385930E0011E57C /* FCA.swift in Sources */,
 				B29B4DC6238578AE002C738E /* ViewController.swift in Sources */,
+				B25CF3F52386E11200737E5C /* DatosGeneralesTableViewController.swift in Sources */,
 				B29B4DC2238578AE002C738E /* AppDelegate.swift in Sources */,
 				B29B4DC4238578AE002C738E /* SceneDelegate.swift in Sources */,
 			);
