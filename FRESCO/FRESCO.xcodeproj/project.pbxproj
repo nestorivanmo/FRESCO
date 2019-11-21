@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		B299AF6723858CEA000F31A3 /* FCATableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B299AF6623858CEA000F31A3 /* FCATableViewController.swift */; };
-		B299AF6B23858D10000F31A3 /* ColorsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B299AF6A23858D10000F31A3 /* ColorsExtension.swift */; };
 		B29B4DC2238578AE002C738E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29B4DC1238578AE002C738E /* AppDelegate.swift */; };
 		B29B4DC4238578AE002C738E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29B4DC3238578AE002C738E /* SceneDelegate.swift */; };
 		B29B4DC6238578AE002C738E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29B4DC5238578AE002C738E /* ViewController.swift */; };
@@ -39,7 +38,6 @@
 
 /* Begin PBXFileReference section */
 		B299AF6623858CEA000F31A3 /* FCATableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FCATableViewController.swift; sourceTree = "<group>"; };
-		B299AF6A23858D10000F31A3 /* ColorsExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorsExtension.swift; sourceTree = "<group>"; };
 		B29B4DBE238578AE002C738E /* FRESCO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FRESCO.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B29B4DC1238578AE002C738E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B29B4DC3238578AE002C738E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -91,14 +89,6 @@
 			path = FCA;
 			sourceTree = "<group>";
 		};
-		B299AF6923858D04000F31A3 /* Colors */ = {
-			isa = PBXGroup;
-			children = (
-				B299AF6A23858D10000F31A3 /* ColorsExtension.swift */,
-			);
-			path = Colors;
-			sourceTree = "<group>";
-		};
 		B299AF6C23858F2F000F31A3 /* InitialScreen */ = {
 			isa = PBXGroup;
 			children = (
@@ -135,7 +125,6 @@
 				B29B4DCC238578B0002C738E /* LaunchScreen.storyboard */,
 				B29B4DCF238578B0002C738E /* Info.plist */,
 				B29B4DD523857B44002C738E /* Fonts */,
-				B299AF6923858D04000F31A3 /* Colors */,
 			);
 			path = FRESCO;
 			sourceTree = "<group>";
@@ -270,7 +259,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B299AF6B23858D10000F31A3 /* ColorsExtension.swift in Sources */,
 				B299AF6723858CEA000F31A3 /* FCATableViewController.swift in Sources */,
 				B2AF0D5F238596DD0011E57C /* FCADetailTableViewController.swift in Sources */,
 				B2AF0D5D2385930E0011E57C /* FCA.swift in Sources */,

@@ -29,13 +29,30 @@ class FCATableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "FCA_identifier", for: indexPath) 
+        let cell = tableView.dequeueReusableCell(withIdentifier: "FCA_identifier", for: indexPath)
+        cell.textLabel?.font = UIFont(name: "SF Pro Text", size: 16)
+        cell.textLabel?.font = .boldSystemFont(ofSize: 16)
         cell.textLabel?.text = self.categories[indexPath.section][indexPath.row]
         return cell
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return self.sections[section]
+    }
+    
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let sectionTitle: String = self.tableView(tableView, titleForHeaderInSection: section)!
+        if sectionTitle == " " {
+            return nil
+        }
+        let title = UILabel()
+        title.text = sectionTitle
+        title.textColor = .label
+        title.backgroundColor = .clear
+        title.font = UIFont(name: "SF Pro Text", size: 25)
+        title.font = UIFont.boldSystemFont(ofSize: 25)
+        
+        return title
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
