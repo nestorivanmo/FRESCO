@@ -11,5 +11,5 @@ import UIKit
 
 extension UIColor {
     static let customOrange = UIColor(red: 232/255, green: 90/255, blue: 70/255, alpha: 1)
+    static let customLightGray = UIColor(red: 243/255, green: 243/255, blue: 243/255, alpha: 1)
 }
-
