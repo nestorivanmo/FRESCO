@@ -14,6 +14,7 @@ struct FCA {
         "Frutas",
         "Cerales sin grasa",
         "Cereales con grasa",
+        "Leguminosas",
         "Origen animal",
         "Lácteos",
         "Aceites y grasas",
@@ -28,13 +29,50 @@ struct FCA {
     ]
     static let categoriesOptions = [
         ["Lechuga",
-         "Espinaca"
+         "Jitomate",
+         "Espinaca",
+         "Zanahoria",
+         "Calabacita",
+         "Brócoli",
+         "Nopales",
+         "Sopa de verduras",
+         "Otra"
         ],
-        ["L",
-         "E"
+        ["Manzana, mango manila",
+         "Plátano, pera, mango ataulfo",
+         "Melón, papaya, sandía",
+         "Uvas, cerezas y fresas"
         ],
-        ["B",
-         "T"
+        ["Tortilla",
+         "Pasta",
+         "Arroz",
+         "Bolillo",
+         "Pan de caja",
+         "Avena",
+         "Hojuela de maíz (Cornflakes)",
+         "Cereales de caja (Zucaritas, etc)",
+         "Hot Cakes",
+         "Otros"
         ],
+        ["Pan dulce",
+         "Barritas de granola o cereal",
+         "Granola",
+         "Galletas tipo sándwich",
+         "Palomitas",
+         "Papas fritas",
+         "Pasteles, pay o panqué",
+         "Tamales",
+         "Tostada frita o totopos",
+         "Otros"
+        ],
+        ["Frijol, lenteja o garbanzo",
+         "Frijoles refritos",
+         "Habas, chícharos o garbanzos secos",
+         "Otros"
+        ],
+        ["Pollo",
+         "Pescado",
+         "Huevo"
+        ]
     ]
 }
