@@ -17,12 +17,18 @@ struct Patient: Codable {
     var height: Float
     var imc: IMC? = nil
     var pa: PhysicalActivity? = nil
+    var energyRequirement: EnergyRequirement? = nil
 }
 
 extension Patient {
     
     mutating func doSomeMath() {
         self.imc = MathManager.calculateIMC(from: self)
+        self.energyRequirement = MathManager.calculateER(from: self)
+    }
+    
+    mutating func updatePA(with pa: PhysicalActivity) {
+        self.pa = pa
     }
     
 }

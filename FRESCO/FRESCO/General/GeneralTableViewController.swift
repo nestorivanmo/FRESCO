@@ -40,9 +40,11 @@ class GeneralTableViewController: UITableViewController {
     
     @IBAction func physAcTextFieldChanged(_ sender: Any) {
         guard let _ = self.patient else {return}
-        let value = Float(self.physAcTextField.text ?? "-1") ?? -1.0
-        self.updatePhysicalActivity(from: value)
+        let value = Float(self.physAcTextField.text ?? "0") ?? 0.0
+        let category = PhysicalActivity.getCategory(from: value)
+        self.patient?.updatePA(with: PhysicalActivity(value: value, category: category))
         Patient.save(self.patient!)
+        self.updateUIState()
     }
 }
 
@@ -87,21 +89,26 @@ extension GeneralTableViewController {
         ViewFormatter.addToolbar(to: physAcTextField)
         self.patient = Patient.loadPatient()
         if let _ = self.patient {
-            self.patient?.doSomeMath()
             self.heartImageView.tintColor = #colorLiteral(red: 0.9361700416, green: 0.4429646432, blue: 0.3427112997, alpha: 1)
-            self.imcLabel.text = String(self.patient?.imc?.value ?? -1.0)
-            if self.patient!.pa != nil {
-                self.updatePhysicalActivity(from: self.patient!.pa!.value)
+            self.patient?.doSomeMath()
+            self.imcLabel.text = String(self.patient?.imc?.value ?? 0)
+            
+            if let physicalActivity = self.patient?.pa {
+                self.updatePhysicalActivity(from: physicalActivity.category, and: physicalActivity.value)
+                //calculate Energy Requirements
+                self.patient?.doSomeMath()
+                self.updateEnergyRequirement()
+            }else {
+                //delete ER
+                self.updatePhysicalActivity(from: .error, and: 0)
             }
         } else {
             self.heartImageView.tintColor = .lightGray
         }
     }
     
-    func updatePhysicalActivity(from value: Float) {
+    func updatePhysicalActivity(from category: PACategory, and value: Float) {
         self.physAcTextField.text = String(value)
-        let category = PhysicalActivity.getCategory(from: value)
-        self.patient?.pa = PhysicalActivity(value: value, category: category)
         switch category {
         case .sedentary:
             self.physAcLabel.text = "Sedentario"
@@ -115,11 +122,11 @@ extension GeneralTableViewController {
         default:
             //show alert error
             self.physAcLabel.text = "--"
+            self.physAcTextField.text = "--"
         }
     }
     
     func updatePACircles(with number: Int) {
-        
         switch number {
         case 1:
             physAcFirstCircle.tintColor = #colorLiteral(red: 0.9361700416, green: 0.4429646432, blue: 0.3427112997, alpha: 1)
@@ -137,6 +144,33 @@ extension GeneralTableViewController {
             physAcFirstCircle.tintColor = .lightGray
             physAcSecondCircle.tintColor = .lightGray
             physAcThirdCircle.tintColor = .lightGray
+        }
+    }
+    
+    func updateEnergyRequirement() {
+        guard let patient = self.patient else {return}
+        guard let er = patient.energyRequirement else {return}
+        guard let nutrients = er.nutrients else {return}
+        
+        guard let sumKcal = er.sumKcal else {return}
+        self.totalKCalIdealLabel.text = String(sumKcal)
+        
+        for nutrient in nutrients {
+            
+            let kcal = nutrient.kCal
+            let grams = nutrient.grams
+            
+            switch nutrient.type {
+            case .carboHydrate:
+                self.hcKcalIdealLabel.text = String(kcal)
+                self.hcGrIdealLabel.text = String(grams)
+            case .protein:
+                self.protKcalIdealLabel.text = String(kcal)
+                self.protGrIdealLabel.text = String(grams)
+            default:
+                self.lipKcalIdealLabel.text = String(kcal)
+                self.lipGrIdealLabel.text = String(grams)
+            }
         }
     }
 }

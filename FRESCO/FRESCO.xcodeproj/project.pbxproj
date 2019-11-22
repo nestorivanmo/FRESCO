@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		B22891E023872C8200B54E32 /* PhysicalActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22891DF23872C8200B54E32 /* PhysicalActivity.swift */; };
 		B22891E223872FC300B54E32 /* ViewFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22891E123872FC300B54E32 /* ViewFormatter.swift */; };
+		B22891E52387345F00B54E32 /* EnergyRequirement.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22891E42387345F00B54E32 /* EnergyRequirement.swift */; };
+		B22891E72387348600B54E32 /* MacroNutrient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22891E62387348600B54E32 /* MacroNutrient.swift */; };
 		B25CF3F22386E0EE00737E5C /* GeneralTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25CF3F12386E0EE00737E5C /* GeneralTableViewController.swift */; };
 		B25CF3F52386E11200737E5C /* DatosGeneralesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25CF3F42386E11200737E5C /* DatosGeneralesTableViewController.swift */; };
 		B299AF6723858CEA000F31A3 /* FCATableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B299AF6623858CEA000F31A3 /* FCATableViewController.swift */; };
@@ -48,6 +50,8 @@
 /* Begin PBXFileReference section */
 		B22891DF23872C8200B54E32 /* PhysicalActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysicalActivity.swift; sourceTree = "<group>"; };
 		B22891E123872FC300B54E32 /* ViewFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewFormatter.swift; sourceTree = "<group>"; };
+		B22891E42387345F00B54E32 /* EnergyRequirement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnergyRequirement.swift; sourceTree = "<group>"; };
+		B22891E62387348600B54E32 /* MacroNutrient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacroNutrient.swift; sourceTree = "<group>"; };
 		B25CF3F12386E0EE00737E5C /* GeneralTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralTableViewController.swift; sourceTree = "<group>"; };
 		B25CF3F42386E11200737E5C /* DatosGeneralesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatosGeneralesTableViewController.swift; sourceTree = "<group>"; };
 		B299AF6623858CEA000F31A3 /* FCATableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FCATableViewController.swift; sourceTree = "<group>"; };
@@ -97,6 +101,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B22891E32387344C00B54E32 /* CoreModels */ = {
+			isa = PBXGroup;
+			children = (
+				B22891E42387345F00B54E32 /* EnergyRequirement.swift */,
+				B22891E62387348600B54E32 /* MacroNutrient.swift */,
+			);
+			path = CoreModels;
+			sourceTree = "<group>";
+		};
 		B25CF3F02386E0CE00737E5C /* General */ = {
 			isa = PBXGroup;
 			children = (
@@ -213,6 +226,7 @@
 		B2B0DB5B238723D400C34C0F /* SharedModels */ = {
 			isa = PBXGroup;
 			children = (
+				B22891E32387344C00B54E32 /* CoreModels */,
 				B2B0DB5E2387249300C34C0F /* MathManager.swift */,
 				B22891E123872FC300B54E32 /* ViewFormatter.swift */,
 			);
@@ -345,8 +359,10 @@
 				B2EFA16E2386F6DB0092D998 /* FixedSize.swift in Sources */,
 				B29B4DC6238578AE002C738E /* ViewController.swift in Sources */,
 				B22891E023872C8200B54E32 /* PhysicalActivity.swift in Sources */,
+				B22891E72387348600B54E32 /* MacroNutrient.swift in Sources */,
 				B25CF3F52386E11200737E5C /* DatosGeneralesTableViewController.swift in Sources */,
 				B29B4DC2238578AE002C738E /* AppDelegate.swift in Sources */,
+				B22891E52387345F00B54E32 /* EnergyRequirement.swift in Sources */,
 				B29B4DC4238578AE002C738E /* SceneDelegate.swift in Sources */,
 				B2D8F0612386F8A100350986 /* Patient.swift in Sources */,
 			);
@@ -493,7 +509,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = P6V832AAG5;
 				INFOPLIST_FILE = FRESCO/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -510,7 +528,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = P6V832AAG5;
 				INFOPLIST_FILE = FRESCO/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
