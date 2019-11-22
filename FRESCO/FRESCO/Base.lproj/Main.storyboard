@@ -54,8 +54,8 @@
                                     </label>
                                 </subviews>
                             </stackView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heart" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="9ZG-85-osS">
-                                <rect key="frame" x="10" y="150.5" width="355" height="164.5"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="9ZG-85-osS">
+                                <rect key="frame" x="10" y="149" width="355" height="167"/>
                                 <color key="tintColor" red="0.90980392160000001" green="0.35294117650000001" blue="0.27450980390000002" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
                         </subviews>
@@ -171,16 +171,16 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="kg/m^2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mr9-lh-ajI">
-                                                    <rect key="frame" x="41" y="14" width="45" height="16"/>
+                                                    <rect key="frame" x="36" y="18" width="45" height="16"/>
                                                     <fontDescription key="fontDescription" name="SFProText-Bold" family="SF Pro Text" pointSize="13"/>
-                                                    <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="textColor" systemColor="tertiaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="Ico-5d-M7L" firstAttribute="centerY" secondItem="I4a-2i-mnH" secondAttribute="centerY" id="2Xs-Yc-7lt"/>
-                                                <constraint firstItem="Mr9-lh-ajI" firstAttribute="leading" secondItem="Ico-5d-M7L" secondAttribute="trailing" constant="10" id="fLo-NQ-oFg"/>
-                                                <constraint firstItem="Mr9-lh-ajI" firstAttribute="centerY" secondItem="I4a-2i-mnH" secondAttribute="centerY" id="ouu-fq-pJ7"/>
+                                                <constraint firstItem="Mr9-lh-ajI" firstAttribute="bottom" secondItem="Ico-5d-M7L" secondAttribute="bottom" id="CMq-xh-xgU"/>
+                                                <constraint firstItem="Mr9-lh-ajI" firstAttribute="leading" secondItem="Ico-5d-M7L" secondAttribute="trailing" constant="5" id="fLo-NQ-oFg"/>
                                                 <constraint firstItem="Ico-5d-M7L" firstAttribute="leading" secondItem="I4a-2i-mnH" secondAttribute="leadingMargin" id="yfa-9h-qYj"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -221,10 +221,10 @@
                                                         <constraint firstAttribute="width" constant="25" id="gm8-aG-hez"/>
                                                     </constraints>
                                                 </imageView>
-                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="w3K-Ml-v8G">
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="w3K-Ml-v8G">
                                                     <rect key="frame" x="10" y="0.0" width="68.5" height="44"/>
                                                     <color key="backgroundColor" systemColor="tertiarySystemBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                                     <connections>
                                                         <action selector="physAcTextFieldChanged:" destination="yqL-I9-MeP" eventType="editingDidEnd" id="0PR-sq-gdh"/>
@@ -233,7 +233,6 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="---" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eVL-sh-WEz">
                                                     <rect key="frame" x="120" y="12.5" width="103" height="19"/>
                                                     <fontDescription key="fontDescription" name="SFProText-Bold" family="SF Pro Text" pointSize="18"/>
-                                                    <color key="textColor" systemColor="tertiaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                     <variation key="heightClass=regular-widthClass=compact">
                                                         <fontDescription key="fontDescription" name="SFProText-Bold" family="SF Pro Text" pointSize="16"/>
@@ -272,7 +271,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="68k-KT-P9D">
                                                     <rect key="frame" x="15" y="11" width="14.5" height="21"/>
                                                     <fontDescription key="fontDescription" name="SFProText-Bold" family="SF Pro Text" pointSize="18"/>
-                                                    <color key="textColor" systemColor="tertiaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Distribución" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cYS-sL-TXA">
@@ -302,79 +301,79 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="kCal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wla-ma-r3v">
                                                     <rect key="frame" x="29.5" y="16" width="26" height="16"/>
                                                     <fontDescription key="fontDescription" name="SFProText-Bold" family="SF Pro Text" pointSize="13"/>
-                                                    <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="textColor" systemColor="quaternaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.17999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="kCal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1qL-T3-WJg">
-                                                    <rect key="frame" x="26" y="95" width="20" height="12"/>
-                                                    <fontDescription key="fontDescription" name="SFProText-Bold" family="SF Pro Text" pointSize="10"/>
-                                                    <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <rect key="frame" x="26" y="93" width="24" height="14"/>
+                                                    <fontDescription key="fontDescription" name="SFProText-Bold" family="SF Pro Text" pointSize="12"/>
+                                                    <color key="textColor" systemColor="quaternaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.17999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="kCal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sXg-FR-xcA">
-                                                    <rect key="frame" x="149" y="92.5" width="20" height="12"/>
-                                                    <fontDescription key="fontDescription" name="SFProText-Bold" family="SF Pro Text" pointSize="10"/>
-                                                    <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <rect key="frame" x="149" y="93" width="24" height="14"/>
+                                                    <fontDescription key="fontDescription" name="SFProText-Bold" family="SF Pro Text" pointSize="12"/>
+                                                    <color key="textColor" systemColor="quaternaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.17999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="gr" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TMR-E2-lnk">
-                                                    <rect key="frame" x="149" y="114.5" width="9.5" height="12"/>
-                                                    <fontDescription key="fontDescription" name="SFProText-Bold" family="SF Pro Text" pointSize="10"/>
-                                                    <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <rect key="frame" x="149" y="113.5" width="11" height="14"/>
+                                                    <fontDescription key="fontDescription" name="SFProText-Bold" family="SF Pro Text" pointSize="12"/>
+                                                    <color key="textColor" systemColor="quaternaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.17999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="kCal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5h2-Bp-5kg">
-                                                    <rect key="frame" x="286.5" y="92.5" width="20" height="12"/>
-                                                    <fontDescription key="fontDescription" name="SFProText-Bold" family="SF Pro Text" pointSize="10"/>
-                                                    <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <rect key="frame" x="286.5" y="93" width="24" height="14"/>
+                                                    <fontDescription key="fontDescription" name="SFProText-Bold" family="SF Pro Text" pointSize="12"/>
+                                                    <color key="textColor" systemColor="quaternaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.17999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="gr" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7bD-3C-TcM">
-                                                    <rect key="frame" x="286.5" y="114.5" width="9.5" height="12"/>
-                                                    <fontDescription key="fontDescription" name="SFProText-Bold" family="SF Pro Text" pointSize="10"/>
-                                                    <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <rect key="frame" x="286.5" y="113.5" width="11" height="14"/>
+                                                    <fontDescription key="fontDescription" name="SFProText-Bold" family="SF Pro Text" pointSize="12"/>
+                                                    <color key="textColor" systemColor="quaternaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.17999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f2V-83-JXy">
                                                     <rect key="frame" x="15" y="90" width="11" height="17"/>
                                                     <fontDescription key="fontDescription" name="SFProText-Bold" family="SF Pro Text" pointSize="14"/>
-                                                    <color key="textColor" systemColor="tertiaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nne-Yp-CSK">
                                                     <rect key="frame" x="15" y="112" width="11" height="17"/>
                                                     <fontDescription key="fontDescription" name="SFProText-Bold" family="SF Pro Text" pointSize="14"/>
-                                                    <color key="textColor" systemColor="tertiaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BEG-aw-6GH">
                                                     <rect key="frame" x="138" y="90" width="11" height="17"/>
                                                     <fontDescription key="fontDescription" name="SFProText-Bold" family="SF Pro Text" pointSize="14"/>
-                                                    <color key="textColor" systemColor="tertiaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kFL-a0-5EL">
                                                     <rect key="frame" x="138" y="112" width="11" height="17"/>
                                                     <fontDescription key="fontDescription" name="SFProText-Bold" family="SF Pro Text" pointSize="14"/>
-                                                    <color key="textColor" systemColor="tertiaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0s9-2i-NWl">
                                                     <rect key="frame" x="275.5" y="90" width="11" height="17"/>
                                                     <fontDescription key="fontDescription" name="SFProText-Bold" family="SF Pro Text" pointSize="14"/>
-                                                    <color key="textColor" systemColor="tertiaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xd7-Yp-6ya">
                                                     <rect key="frame" x="275.5" y="112" width="11" height="17"/>
                                                     <fontDescription key="fontDescription" name="SFProText-Bold" family="SF Pro Text" pointSize="14"/>
-                                                    <color key="textColor" systemColor="tertiaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="gr" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VyV-AV-lJq">
-                                                    <rect key="frame" x="26" y="114.5" width="9.5" height="12"/>
-                                                    <fontDescription key="fontDescription" name="SFProText-Bold" family="SF Pro Text" pointSize="10"/>
-                                                    <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <rect key="frame" x="26" y="113.5" width="11" height="14"/>
+                                                    <fontDescription key="fontDescription" name="SFProText-Bold" family="SF Pro Text" pointSize="12"/>
+                                                    <color key="textColor" systemColor="quaternaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.17999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -388,15 +387,16 @@
                                                 <constraint firstItem="f2V-83-JXy" firstAttribute="top" secondItem="cKl-Pv-Ifr" secondAttribute="bottom" constant="5" id="AzI-IQ-fMU"/>
                                                 <constraint firstItem="1qL-T3-WJg" firstAttribute="bottom" secondItem="f2V-83-JXy" secondAttribute="bottom" id="Bbw-OX-FiH"/>
                                                 <constraint firstItem="68k-KT-P9D" firstAttribute="leading" secondItem="4Zl-It-Uyn" secondAttribute="leadingMargin" id="FVH-im-fZj"/>
+                                                <constraint firstItem="sXg-FR-xcA" firstAttribute="bottom" secondItem="BEG-aw-6GH" secondAttribute="bottom" id="Izj-gy-2zw"/>
                                                 <constraint firstItem="5h2-Bp-5kg" firstAttribute="leading" secondItem="0s9-2i-NWl" secondAttribute="trailing" id="KEH-Tf-RAU"/>
                                                 <constraint firstItem="wla-ma-r3v" firstAttribute="leading" secondItem="68k-KT-P9D" secondAttribute="trailing" id="KQg-Yr-GbE"/>
                                                 <constraint firstItem="cKl-Pv-Ifr" firstAttribute="leading" secondItem="4Zl-It-Uyn" secondAttribute="leadingMargin" id="KTi-pD-xis"/>
                                                 <constraint firstItem="cYS-sL-TXA" firstAttribute="leading" secondItem="4Zl-It-Uyn" secondAttribute="leadingMargin" id="NXG-mI-2Vd"/>
                                                 <constraint firstItem="kFL-a0-5EL" firstAttribute="leading" secondItem="BEG-aw-6GH" secondAttribute="leading" id="Neg-Fk-M6g"/>
                                                 <constraint firstItem="nne-Yp-CSK" firstAttribute="leading" secondItem="f2V-83-JXy" secondAttribute="leading" id="O4f-Q0-jcU"/>
-                                                <constraint firstItem="5h2-Bp-5kg" firstAttribute="centerY" secondItem="0s9-2i-NWl" secondAttribute="centerY" id="PE1-YG-nRl"/>
                                                 <constraint firstItem="7bD-3C-TcM" firstAttribute="centerY" secondItem="Xd7-Yp-6ya" secondAttribute="centerY" id="Q9e-tv-TgY"/>
                                                 <constraint firstItem="7bD-3C-TcM" firstAttribute="leading" secondItem="5h2-Bp-5kg" secondAttribute="leading" id="TVo-sO-9CZ"/>
+                                                <constraint firstItem="5h2-Bp-5kg" firstAttribute="bottom" secondItem="0s9-2i-NWl" secondAttribute="bottom" id="Tex-y1-eav"/>
                                                 <constraint firstItem="TMR-E2-lnk" firstAttribute="centerY" secondItem="kFL-a0-5EL" secondAttribute="centerY" id="VBY-vQ-IEB"/>
                                                 <constraint firstItem="VyV-AV-lJq" firstAttribute="leading" secondItem="1qL-T3-WJg" secondAttribute="leading" id="Wim-YV-19d"/>
                                                 <constraint firstItem="kFL-a0-5EL" firstAttribute="top" secondItem="BEG-aw-6GH" secondAttribute="bottom" constant="5" id="XBj-ip-arH"/>
@@ -414,7 +414,6 @@
                                                 <constraint firstItem="EqU-Jg-cAz" firstAttribute="centerY" secondItem="cKl-Pv-Ifr" secondAttribute="centerY" id="oM1-4h-VCV"/>
                                                 <constraint firstItem="f2V-83-JXy" firstAttribute="leading" secondItem="4Zl-It-Uyn" secondAttribute="leadingMargin" id="qJU-y6-xQX"/>
                                                 <constraint firstItem="sXg-FR-xcA" firstAttribute="leading" secondItem="BEG-aw-6GH" secondAttribute="trailing" id="qxK-Yj-0Oa"/>
-                                                <constraint firstItem="sXg-FR-xcA" firstAttribute="centerY" secondItem="BEG-aw-6GH" secondAttribute="centerY" id="xAI-Uh-cJs"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" name="CustomTableViewCellColor"/>
@@ -502,8 +501,8 @@
                                                     <rect key="frame" x="161.5" y="5" width="171.5" height="35"/>
                                                     <color key="backgroundColor" name="CustomTableViewCellColor"/>
                                                     <segments>
+                                                        <segment title="F"/>
                                                         <segment title="M"/>
-                                                        <segment title="H"/>
                                                     </segments>
                                                     <color key="tintColor" name="CustomOrange"/>
                                                     <connections>
@@ -799,20 +798,102 @@
         <!--Detail-->
         <scene sceneID="dzV-5T-EiO">
             <objects>
-                <tableViewController id="dSV-bC-pbE" customClass="FCADetailTableViewController" customModule="FRESCO" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="dSV-bC-pbE" customClass="FoodTableViewController" customModule="FRESCO" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="imr-gi-TNf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" name="CustomBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FCADetails" id="9wo-r8-5F4">
-                                <rect key="frame" x="16" y="55.5" width="343" height="43.5"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FoodCell" rowHeight="150" id="9wo-r8-5F4" customClass="FoodTableViewCell" customModule="FRESCO" customModuleProvider="target">
+                                <rect key="frame" x="16" y="55.5" width="343" height="150"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9wo-r8-5F4" id="tes-sQ-HCe">
-                                    <rect key="frame" x="0.0" y="0.0" width="343" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="343" height="150"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="app.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="3Hx-fU-A55">
+                                            <rect key="frame" x="10" y="8" width="30" height="27.5"/>
+                                            <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="30" id="69u-1g-AcZ"/>
+                                                <constraint firstAttribute="height" constant="30" id="JAL-2W-bxW"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sr9-YP-pS4">
+                                            <rect key="frame" x="50" y="11" width="278" height="30"/>
+                                            <fontDescription key="fontDescription" name="SFProText-Bold" family="SF Pro Text" pointSize="16"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="b9g-Zj-GHG">
+                                            <rect key="frame" x="10" y="77" width="51.5" height="34"/>
+                                            <color key="textColor" name="CustomOrange"/>
+                                            <fontDescription key="fontDescription" name="SFProText-Bold" family="SF Pro Text" pointSize="16"/>
+                                            <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" smartDashesType="no" smartInsertDeleteType="no"/>
+                                            <connections>
+                                                <action selector="timesTextFieldChanged:" destination="dSV-bC-pbE" eventType="editingChanged" id="bjC-V6-acE"/>
+                                            </connections>
+                                        </textField>
+                                        <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="H81-8z-Bc9">
+                                            <rect key="frame" x="66.5" y="78.5" width="113" height="32"/>
+                                            <segments>
+                                                <segment title="Semana"/>
+                                                <segment title="Mes"/>
+                                            </segments>
+                                        </segmentedControl>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="veces por" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KTZ-AT-3Qw">
+                                            <rect key="frame" x="95" y="111.5" width="56" height="14"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="56" id="Woa-Lv-CEp"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="12"/>
+                                            <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p0O-uo-xgb">
+                                            <rect key="frame" x="254.5" y="84.5" width="68.5" height="17.5"/>
+                                            <fontDescription key="fontDescription" name="SFProText-Bold" family="SF Pro Text" pointSize="15"/>
+                                            <color key="textColor" systemColor="tertiaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="H4C-Ks-pF0">
+                                            <rect key="frame" x="198" y="77" width="51.5" height="34"/>
+                                            <color key="textColor" name="CustomOrange"/>
+                                            <fontDescription key="fontDescription" name="SFProText-Bold" family="SF Pro Text" pointSize="16"/>
+                                            <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="decimalPad" smartDashesType="no" smartInsertDeleteType="no"/>
+                                        </textField>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="b9g-Zj-GHG" firstAttribute="width" secondItem="tes-sQ-HCe" secondAttribute="width" multiplier="0.15" id="39Q-u9-RNy"/>
+                                        <constraint firstItem="p0O-uo-xgb" firstAttribute="leading" secondItem="H4C-Ks-pF0" secondAttribute="trailing" constant="5" id="5w5-hz-zzF"/>
+                                        <constraint firstItem="p0O-uo-xgb" firstAttribute="firstBaseline" secondItem="b9g-Zj-GHG" secondAttribute="firstBaseline" id="Bpb-t6-aup"/>
+                                        <constraint firstItem="sr9-YP-pS4" firstAttribute="height" secondItem="3Hx-fU-A55" secondAttribute="height" id="Duw-Zt-HBJ"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="sr9-YP-pS4" secondAttribute="trailing" id="Pls-q7-oui"/>
+                                        <constraint firstItem="H4C-Ks-pF0" firstAttribute="width" secondItem="tes-sQ-HCe" secondAttribute="width" multiplier="0.15" id="Xzf-oy-sZg"/>
+                                        <constraint firstItem="H4C-Ks-pF0" firstAttribute="firstBaseline" secondItem="b9g-Zj-GHG" secondAttribute="firstBaseline" id="cWQ-vz-iCj"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="p0O-uo-xgb" secondAttribute="trailing" constant="5" id="dGT-uP-fBc"/>
+                                        <constraint firstItem="3Hx-fU-A55" firstAttribute="leading" secondItem="tes-sQ-HCe" secondAttribute="leading" constant="10" id="enV-NH-v93"/>
+                                        <constraint firstItem="sr9-YP-pS4" firstAttribute="top" secondItem="tes-sQ-HCe" secondAttribute="topMargin" id="fm3-x3-Ba0"/>
+                                        <constraint firstItem="KTZ-AT-3Qw" firstAttribute="top" secondItem="H81-8z-Bc9" secondAttribute="bottom" constant="2" id="g4T-P5-Dm5"/>
+                                        <constraint firstItem="H81-8z-Bc9" firstAttribute="width" secondItem="tes-sQ-HCe" secondAttribute="width" multiplier="0.33" id="h2G-8L-1JR"/>
+                                        <constraint firstItem="b9g-Zj-GHG" firstAttribute="leading" secondItem="3Hx-fU-A55" secondAttribute="leading" id="iLN-gH-sfR"/>
+                                        <constraint firstItem="sr9-YP-pS4" firstAttribute="leading" secondItem="3Hx-fU-A55" secondAttribute="trailing" constant="10" id="lE9-dX-b2n"/>
+                                        <constraint firstItem="KTZ-AT-3Qw" firstAttribute="centerX" secondItem="H81-8z-Bc9" secondAttribute="centerX" id="qMn-fT-YMA"/>
+                                        <constraint firstItem="b9g-Zj-GHG" firstAttribute="top" secondItem="3Hx-fU-A55" secondAttribute="bottom" constant="40" id="t4f-0B-71g"/>
+                                        <constraint firstItem="H81-8z-Bc9" firstAttribute="firstBaseline" secondItem="b9g-Zj-GHG" secondAttribute="firstBaseline" id="tkc-nT-dQj"/>
+                                        <constraint firstItem="p0O-uo-xgb" firstAttribute="width" secondItem="tes-sQ-HCe" secondAttribute="width" multiplier="0.2" id="vgd-Jw-quR"/>
+                                        <constraint firstItem="H81-8z-Bc9" firstAttribute="leading" secondItem="b9g-Zj-GHG" secondAttribute="trailing" constant="5" id="wMF-bT-Blb"/>
+                                        <constraint firstItem="3Hx-fU-A55" firstAttribute="top" secondItem="tes-sQ-HCe" secondAttribute="top" constant="7" id="x2k-2v-GtB"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" name="CustomTableViewCellColor"/>
+                                <connections>
+                                    <outlet property="foodImageView" destination="3Hx-fU-A55" id="NXl-8T-pLB"/>
+                                    <outlet property="foodLabel" destination="sr9-YP-pS4" id="GE6-gc-YqA"/>
+                                    <outlet property="quantityLabel" destination="p0O-uo-xgb" id="Sam-SM-50g"/>
+                                    <outlet property="quantityTextField" destination="H4C-Ks-pF0" id="tPP-HT-DUj"/>
+                                    <outlet property="timesTextField" destination="b9g-Zj-GHG" id="jNV-tD-8dN"/>
+                                    <outlet property="weekMonthSegmentedControl" destination="H81-8z-Bc9" id="KFV-1n-Rau"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -896,10 +977,12 @@
         </scene>
     </scenes>
     <resources>
+        <image name="app.fill" catalog="system" width="64" height="56"/>
         <image name="circle.fill" catalog="system" width="64" height="60"/>
         <image name="heart" catalog="system" width="64" height="54"/>
         <image name="heart.fill" catalog="system" width="64" height="54"/>
         <image name="list.dash" catalog="system" width="64" height="42"/>
+        <image name="logo" width="875" height="876"/>
         <namedColor name="CustomBackgroundColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </namedColor>

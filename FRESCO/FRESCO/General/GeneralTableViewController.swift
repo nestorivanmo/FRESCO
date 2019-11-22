@@ -92,6 +92,8 @@ extension GeneralTableViewController {
             self.heartImageView.tintColor = #colorLiteral(red: 0.9361700416, green: 0.4429646432, blue: 0.3427112997, alpha: 1)
             self.patient?.doSomeMath()
             self.imcLabel.text = String(self.patient?.imc?.value ?? 0)
+            self.imcLabel.textColor = .label
+            self.imcLabel.font = .boldSystemFont(ofSize: 20)
             
             if let physicalActivity = self.patient?.pa {
                 self.updatePhysicalActivity(from: physicalActivity.category, and: physicalActivity.value)
@@ -109,6 +111,12 @@ extension GeneralTableViewController {
     
     func updatePhysicalActivity(from category: PACategory, and value: Float) {
         self.physAcTextField.text = String(value)
+        self.physAcTextField.tintColor = .label
+        self.physAcTextField.font = .boldSystemFont(ofSize: 18)
+        
+        self.physAcLabel.tintColor = .label
+        self.physAcLabel.font = .boldSystemFont(ofSize: 18)
+        
         switch category {
         case .sedentary:
             self.physAcLabel.text = "Sedentario"
@@ -123,6 +131,10 @@ extension GeneralTableViewController {
             //show alert error
             self.physAcLabel.text = "--"
             self.physAcTextField.text = "--"
+            self.physAcLabel.tintColor = .lightGray
+            self.physAcLabel.font = UIFont.systemFont(ofSize: 18, weight: .regular)
+            self.physAcTextField.tintColor = .lightGray
+            self.physAcTextField.font = UIFont.systemFont(ofSize: 18, weight: .regular)
         }
     }
     
@@ -154,6 +166,8 @@ extension GeneralTableViewController {
         
         guard let sumKcal = er.sumKcal else {return}
         self.totalKCalIdealLabel.text = String(sumKcal)
+        self.totalKCalIdealLabel.tintColor = .label
+        self.totalKCalIdealLabel.font = .boldSystemFont(ofSize: 18)
         
         for nutrient in nutrients {
             
@@ -164,12 +178,18 @@ extension GeneralTableViewController {
             case .carboHydrate:
                 self.hcKcalIdealLabel.text = String(kcal)
                 self.hcGrIdealLabel.text = String(grams)
+                ViewFormatter.resultFor(label: hcKcalIdealLabel)
+                ViewFormatter.resultFor(label: hcGrIdealLabel)
             case .protein:
                 self.protKcalIdealLabel.text = String(kcal)
                 self.protGrIdealLabel.text = String(grams)
+                ViewFormatter.resultFor(label: protKcalIdealLabel)
+                ViewFormatter.resultFor(label: protGrIdealLabel)
             default:
                 self.lipKcalIdealLabel.text = String(kcal)
                 self.lipGrIdealLabel.text = String(grams)
+                ViewFormatter.resultFor(label: lipKcalIdealLabel)
+                ViewFormatter.resultFor(label: lipGrIdealLabel)
             }
         }
     }

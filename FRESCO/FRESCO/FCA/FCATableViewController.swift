@@ -58,7 +58,7 @@ class FCATableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard segue.identifier == "showFCADetail" else {return}
         guard let newIndexPath = tableView.indexPathForSelectedRow else {return}
-        let fcaDetailViewController = segue.destination as! FCADetailTableViewController
+        let fcaDetailViewController = segue.destination as! FoodTableViewController
         fcaDetailViewController.navigationItem.title = categories[newIndexPath.section][newIndexPath.row]
         fcaDetailViewController.options = categoriesOptions[newIndexPath.row]
     }
