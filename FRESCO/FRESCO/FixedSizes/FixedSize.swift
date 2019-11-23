@@ -10,6 +10,6 @@ import Foundation
 import UIKit
 
 struct FixedSize {
-    static let tableViewHeaderSize: CGFloat = 18
+    static let tableViewHeaderSize: CGFloat = 20
     static let font = "SF Pro Text"
 }

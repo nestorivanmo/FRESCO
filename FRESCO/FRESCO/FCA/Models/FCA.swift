@@ -14,11 +14,11 @@ struct FCA {
         "Frutas",
         "Cerales sin grasa",
         "Cereales con grasa",
+        "Grasas con proteína",
+        "Grasas sin proteína",
         "Leguminosas",
         "Origen animal",
         "Lácteos",
-        "Aceites y grasas",
-        "Oleaginosas",
         "Azúcares",
         "Bebidas alcohólicas"],
         ["Acerca de FCA"]
@@ -67,6 +67,21 @@ struct FCA {
             Food(name: "Tostada frita o totopos", category: .cerealConGrasa, unit: .piezas, eq: 1.5)
         ],
         [
+            Food(name: "Cacahuates", category: .grasasConProteina, unit: .piezas, eq: 14),
+            Food(name: "Nueces", category: .grasasConProteina, unit: .piezas, eq: 3),
+            Food(name: "Nueces de la India", category: .grasasConProteina, unit: .piezas, eq: 7),
+            Food(name: "Almendras", category: .grasasConProteina, unit: .piezas, eq: 10),
+            Food(name: "Pistaches", category: .grasasConProteina, unit: .piezas, eq: 18),
+        ],
+        [
+            Food(name: "Aceite", category: .grasasSinProteina, unit: .cucharaditas, eq: 1),
+            Food(name: "Aguacate", category: .grasasSinProteina, unit: .piezas, eq: 0.33),
+            Food(name: "Crema", category: .grasasSinProteina, unit: .cucharadas, eq: 1),
+            Food(name: "Mayonesa", category: .grasasSinProteina, unit: .cucharadas, eq: 1),
+            Food(name: "Aderezos", category: .grasasSinProteina, unit: .cucharadas, eq: 3),
+            Food(name: "Vinagretas", category: .grasasSinProteina, unit: .cucharadas, eq: 0.5),
+        ],
+        [
             Food(name: "Frijol, lenteja o garbanzo", category: .leguminosa, unit: .tazas, eq: 0.5),
             Food(name: "Frijoles refritos", category: .leguminosa, unit: .tazas, eq: 0.33),
             Food(name: "Habas, chícharos o garbanzos secos", category: .leguminosa, unit: .tazas, eq: 0.25),
@@ -87,21 +102,6 @@ struct FCA {
             Food(name: "Leche/yogurt semidescremada", category: .lacteo, unit: .ml, eq: 1),
             Food(name: "Leche/yogurt entera", category: .lacteo, unit: .ml, eq: 1),
             Food(name: "Leche/yogurt con azúcar", category: .lacteo, unit: .ml, eq: 1)
-        ],
-        [
-            Food(name: "Aceite", category: .grasasSinProteina, unit: .cucharaditas, eq: 1),
-            Food(name: "Aguacate", category: .grasasSinProteina, unit: .piezas, eq: 0.33),
-            Food(name: "Crema", category: .grasasSinProteina, unit: .cucharadas, eq: 1),
-            Food(name: "Mayonesa", category: .grasasSinProteina, unit: .cucharadas, eq: 1),
-            Food(name: "Aderezos", category: .grasasSinProteina, unit: .cucharadas, eq: 3),
-            Food(name: "Vinagretas", category: .grasasSinProteina, unit: .cucharadas, eq: 0.5),
-        ],
-        [
-            Food(name: "Cacahuates", category: .grasasConProteina, unit: .piezas, eq: 14),
-            Food(name: "Nueces", category: .grasasConProteina, unit: .piezas, eq: 3),
-            Food(name: "Nueces de la India", category: .grasasConProteina, unit: .piezas, eq: 7),
-            Food(name: "Almendras", category: .grasasConProteina, unit: .piezas, eq: 10),
-            Food(name: "Pistaches", category: .grasasConProteina, unit: .piezas, eq: 18),
         ],
         [
             Food(name: "Azúcar de mesa", category: .azucar, unit: .cucharaditas, eq: 2),

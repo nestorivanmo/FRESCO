@@ -12,6 +12,21 @@ class FoodGroupsTableViewController: UITableViewController {
     let sections = FCA.sections
     let foodGroups = FCA.foodGroups
     var foods = FCA.foods
+    let emojis = ["🍅", "🍊", "🥖", "🥔", "🥜", "🥑", "🥬", "🐟", "🥛", "🥤", "🍷"]
+    let colors =
+        [
+            UIColor(named: "1-Vegetable"),
+            UIColor(named: "2-Fruit"),
+            UIColor(named: "3-CerealN"),
+            UIColor(named: "4-CerealY"),
+            UIColor(named: "5-Leg"),
+            UIColor(named: "6-Animal"),
+            UIColor(named: "7-Milk"),
+            UIColor(named: "8-Oil"),
+            UIColor(named: "9-Oleag"),
+            UIColor(named: "10-Sugar"),
+            UIColor(named: "11-Alcohol"),
+        ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,13 +36,14 @@ class FoodGroupsTableViewController: UITableViewController {
 
 extension FoodGroupsTableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard segue.identifier == "ShowFoods" else {return}
-        guard let newIndexPath = tableView.indexPathForSelectedRow else {return}
-        let destinationVC = segue.destination as! FoodsTableViewController
-        let foodGroup = foodGroups[newIndexPath.section][newIndexPath.row]
-        destinationVC.navigationItem.title = foodGroup
-        destinationVC.foods = foods[newIndexPath.row]
-        destinationVC.foodGroupIndex = newIndexPath.row
+        if segue.identifier == "ShowFoods" {
+            guard let newIndexPath = tableView.indexPathForSelectedRow else {return}
+            let destinationVC = segue.destination as! FoodsTableViewController
+            let foodGroup = foodGroups[newIndexPath.section][newIndexPath.row]
+            destinationVC.navigationItem.title = foodGroup
+            destinationVC.foods = foods[newIndexPath.row]
+            destinationVC.foodGroupIndex = newIndexPath.row
+        }
     }
     @IBAction func unwindToFoodGroups(segue: UIStoryboardSegue) {
         //segue from Listo bar buttom item: "ReturnToFoodGroups"
@@ -49,11 +65,11 @@ extension FoodGroupsTableViewController {
         return self.foodGroups[section].count
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "FoodGroupCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "FoodGroupCell", for: indexPath) as! FoodGroupTableViewCell
         let category = foodGroups[indexPath.section][indexPath.row]
-        cell.textLabel?.text = category
-        cell.textLabel?.font = UIFont(name: "SF Pro Text", size: 16)
-        cell.textLabel?.font = .boldSystemFont(ofSize: 16)
+        let emoji = emojis[indexPath.row]
+        cell.foodGroupLabel.text = category
+        cell.foodGroupEmoji.text = indexPath.section == 0 ? emoji:""
         return cell
     }
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -71,5 +87,8 @@ extension FoodGroupsTableViewController {
         title.font = UIFont(name: FixedSize.font, size: FixedSize.tableViewHeaderSize)
         title.font = UIFont.boldSystemFont(ofSize: FixedSize.tableViewHeaderSize)
         return title
+    }
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return CGFloat(44)
     }
 }

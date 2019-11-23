@@ -47,6 +47,7 @@
 		B2D47CF82386543400A067A7 /* IntroductionPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D47CF72386543400A067A7 /* IntroductionPageViewController.swift */; };
 		B2D8F0612386F8A100350986 /* Patient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D8F0602386F8A100350986 /* Patient.swift */; };
 		B2EFA16E2386F6DB0092D998 /* FixedSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2EFA16D2386F6DB0092D998 /* FixedSize.swift */; };
+		B2F12BDC23890B010070DFFF /* FoodGroupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F12BDB23890B010070DFFF /* FoodGroupTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -92,6 +93,7 @@
 		B2D47CF72386543400A067A7 /* IntroductionPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroductionPageViewController.swift; sourceTree = "<group>"; };
 		B2D8F0602386F8A100350986 /* Patient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Patient.swift; sourceTree = "<group>"; };
 		B2EFA16D2386F6DB0092D998 /* FixedSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixedSize.swift; sourceTree = "<group>"; };
+		B2F12BDB23890B010070DFFF /* FoodGroupTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodGroupTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +119,7 @@
 		B24FBD7D2388CCA50067DA77 /* FoodGroups */ = {
 			isa = PBXGroup;
 			children = (
+				B2F12BDA238909B90070DFFF /* CustomCells */,
 				B2BCA51E2388FB94002EC885 /* FoodGroupsTableViewController.swift */,
 			);
 			path = FoodGroups;
@@ -281,6 +284,14 @@
 			path = FixedSizes;
 			sourceTree = "<group>";
 		};
+		B2F12BDA238909B90070DFFF /* CustomCells */ = {
+			isa = PBXGroup;
+			children = (
+				B2F12BDB23890B010070DFFF /* FoodGroupTableViewCell.swift */,
+			);
+			path = CustomCells;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -377,6 +388,7 @@
 				B2B0DB5F2387249300C34C0F /* MathManager.swift in Sources */,
 				B2D47CF82386543400A067A7 /* IntroductionPageViewController.swift in Sources */,
 				B2AF0D5D2385930E0011E57C /* FCA.swift in Sources */,
+				B2F12BDC23890B010070DFFF /* FoodGroupTableViewCell.swift in Sources */,
 				B2BCA521238903AB002EC885 /* FoodsTableViewController.swift in Sources */,
 				B2EFA16E2386F6DB0092D998 /* FixedSize.swift in Sources */,
 				B29B4DC6238578AE002C738E /* ViewController.swift in Sources */,
