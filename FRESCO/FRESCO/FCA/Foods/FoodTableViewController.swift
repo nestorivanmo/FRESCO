@@ -18,16 +18,26 @@ class FoodTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
 }
 
 extension FoodTableViewController {
     @IBAction func timesTextFieldChanged(_ sender: Any) {
+        print("here...")
         guard let cell = self.getCurrentCell() else {return}
         if cell.timesTextField.text == "0" || cell.timesTextField.text == ""{
             cell.foodImageView.tintColor = .lightGray
         } else {
             cell.foodImageView.tintColor = #colorLiteral(red: 0.9361700416, green: 0.4429646432, blue: 0.3427112997, alpha: 1)
         }
+    }
+    @IBAction func timesTextFieldBeginEditing(_ sender: Any) {
+        guard let cell = self.getCurrentCell() else {return}
+        cell.timesTextField.selectAll(nil)
+    }
+    @IBAction func quantityTextFieldBeginEditing(_ sender: Any) {
+        guard let cell = self.getCurrentCell() else {return}
+        cell.quantityTextField.selectAll(nil)
     }
     @IBAction func weekMonthSegmentedControlChanged(_ sender: Any) {
         guard let cell = self.getCurrentCell() else {return}

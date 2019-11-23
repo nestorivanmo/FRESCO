@@ -831,6 +831,7 @@
                                             <fontDescription key="fontDescription" name="SFProText-Bold" family="SF Pro Text" pointSize="16"/>
                                             <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" smartDashesType="no" smartInsertDeleteType="no"/>
                                             <connections>
+                                                <action selector="timesTextFieldBeginEditing:" destination="dSV-bC-pbE" eventType="editingDidBegin" id="1rQ-pn-Ay8"/>
                                                 <action selector="timesTextFieldChanged:" destination="dSV-bC-pbE" eventType="editingChanged" id="bjC-V6-acE"/>
                                             </connections>
                                         </textField>
@@ -862,6 +863,9 @@
                                             <color key="textColor" name="CustomOrange"/>
                                             <fontDescription key="fontDescription" name="SFProText-Bold" family="SF Pro Text" pointSize="16"/>
                                             <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="decimalPad" smartDashesType="no" smartInsertDeleteType="no"/>
+                                            <connections>
+                                                <action selector="quantityTextFieldBeginEditing:" destination="dSV-bC-pbE" eventType="editingDidBegin" id="tK9-ur-MVr"/>
+                                            </connections>
                                         </textField>
                                     </subviews>
                                     <constraints>
