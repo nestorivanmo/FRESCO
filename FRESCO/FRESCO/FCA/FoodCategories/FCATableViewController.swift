@@ -18,7 +18,6 @@ class FCATableViewController: UITableViewController {
         super.viewDidLoad()
         self.clearsSelectionOnViewWillAppear = false
     }
-    // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         return self.sections.count
@@ -62,5 +61,5 @@ class FCATableViewController: UITableViewController {
         fcaDetailViewController.navigationItem.title = categories[newIndexPath.section][newIndexPath.row]
         fcaDetailViewController.options = categoriesOptions[newIndexPath.row]
     }
-
+    
 }

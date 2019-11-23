@@ -112,6 +112,14 @@
 			path = CoreModels;
 			sourceTree = "<group>";
 		};
+		B24FBD7D2388CCA50067DA77 /* FoodCategories */ = {
+			isa = PBXGroup;
+			children = (
+				B299AF6623858CEA000F31A3 /* FCATableViewController.swift */,
+			);
+			path = FoodCategories;
+			sourceTree = "<group>";
+		};
 		B25CF3F02386E0CE00737E5C /* General */ = {
 			isa = PBXGroup;
 			children = (
@@ -133,9 +141,9 @@
 		B299AF6823858CF2000F31A3 /* FCA */ = {
 			isa = PBXGroup;
 			children = (
-				B2AF0D60238596E10011E57C /* Foods */,
 				B2AF0D5B238593030011E57C /* Models */,
-				B299AF6623858CEA000F31A3 /* FCATableViewController.swift */,
+				B24FBD7D2388CCA50067DA77 /* FoodCategories */,
+				B2AF0D60238596E10011E57C /* Foods */,
 			);
 			path = FCA;
 			sourceTree = "<group>";
