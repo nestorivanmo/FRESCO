@@ -52,7 +52,6 @@ class DatosGeneralesTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
         guard segue.identifier == "SavePatient" else {return}
-        
         self.patient = Patient(name: nameTextField.text ?? "", birthday: birthdayDatePickerView.date, age: Int(ageTextField.text!)!, sex: getSex(), weight: Float(weightTextField.text!)!, height: Float(heightTextField.text!)!)
     }
 
