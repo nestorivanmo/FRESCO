@@ -18,7 +18,6 @@ class DatosGeneralesTableViewController: UITableViewController {
     @IBOutlet weak var birthdayLabel: UILabel!
     @IBOutlet weak var birthdayDatePickerView: UIDatePicker!
     @IBOutlet weak var saveButton: UIBarButtonItem!
-    
     var isBirthdayDatePickerHidden = true
     let birhtdayDayFormatter: DateFormatter = {
             let formatter = DateFormatter()
@@ -26,7 +25,6 @@ class DatosGeneralesTableViewController: UITableViewController {
         return formatter
     }()
     var toolbarIndex = 0
-    
     var patient: Patient?
     
     override func viewDidLoad() {
@@ -37,12 +35,10 @@ class DatosGeneralesTableViewController: UITableViewController {
         self.updatePatientData(from: patient)
         updateUIState()
     }
-    
     func updateUIState() {
         self.updateSaveButton()
         self.addToolbars()
     }
-    
     func updatePatientData(from patient: Patient) {
         self.nameTextField.text = patient.name
         self.sexSegmentedControl.selectedSegmentIndex = (patient.sex == Sex.female) ? 0:1
@@ -53,7 +49,6 @@ class DatosGeneralesTableViewController: UITableViewController {
         self.birthdayLabel.text = birhtdayDayFormatter.string(from: patient.birthday)
         addToolbars()
     }
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
         guard segue.identifier == "SavePatient" else {return}
@@ -70,7 +65,6 @@ extension DatosGeneralesTableViewController {
     @IBAction func sexSegmentedControlChanged(_ sender: Any) {
         updateUIState()
     }
-    
     func getSex() -> Sex{
         let index = sexSegmentedControl.selectedSegmentIndex
         if index == 0 {
@@ -78,15 +72,12 @@ extension DatosGeneralesTableViewController {
         }
         return .male
     }
-    
     @IBAction func ageTextFieldChanged(_ sender: Any) {
         updateUIState()
     }
-    
     @IBAction func weightTextFieldChanged(_ sender: Any) {
         updateUIState()
     }
-    
     @IBAction func heightTextFieldChanged(_ sender: Any) {
         updateUIState()
     }
@@ -141,7 +132,6 @@ extension DatosGeneralesTableViewController {
 }
 
 extension DatosGeneralesTableViewController {
-   
     func updateSaveButton() {
        let nameText = nameTextField.text ?? ""
        let ageText = ageTextField.text ?? ""
@@ -149,11 +139,9 @@ extension DatosGeneralesTableViewController {
        let heightText = heightTextField.text ?? ""
        saveButton.isEnabled = !nameText.isEmpty && !ageText.isEmpty && !weightText.isEmpty && !heightText.isEmpty
     }
-    
     func addToolbars() {
         ViewFormatter.addToolbar(to: ageTextField)
         ViewFormatter.addToolbar(to: weightTextField)
         ViewFormatter.addToolbar(to: heightTextField)
     }
-    
 }

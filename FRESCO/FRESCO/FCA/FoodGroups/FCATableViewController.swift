@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FCATableViewController: UITableViewController {
+class FoodGroupsTableViewController: UITableViewController {
 
     let sections = FCA.sections
     let foodGroups = FCA.foodGroups
