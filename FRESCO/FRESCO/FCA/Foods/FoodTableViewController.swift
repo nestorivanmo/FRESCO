@@ -23,7 +23,6 @@ class FoodTableViewController: UITableViewController {
 
 extension FoodTableViewController {
     @IBAction func timesTextFieldChanged(_ sender: Any) {
-        print("here...")
         guard let cell = self.getCurrentCell() else {return}
         if cell.timesTextField.text == "0" || cell.timesTextField.text == ""{
             cell.foodImageView.tintColor = .lightGray
