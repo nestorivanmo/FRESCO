@@ -16,6 +16,12 @@ struct Food: Codable {
     var times: Int? = nil
     var quantity: Double? = nil
     var weekly: Bool? = nil
+    
+    mutating func updateFood(_ times: Int,_ weekly: Bool,_ quantity: Double) {
+        self.times = times
+        self.weekly = weekly
+        self.quantity = quantity
+    }
 }
 
 enum FoodCategory: String, Codable {

@@ -27,11 +27,29 @@ extension FoodsTableViewController {
     func updateFoodWith(_ cell: FoodTableViewCell) {
         guard let indexPath = self.getCurrentIndexPath() else {return}
         var food = self.foods.remove(at: indexPath.row)
-        let times = Int(cell.timesTextField.text ?? "0")!
+        let times = Int(cell.timesTextField.text ?? "0") ?? 0
         let week = cell.weekMonthSegmentedControl.selectedSegmentIndex == 0 ? true:false
-        let quantity = Double(cell.quantityTextField.text ?? "0")!
+        let quantity = Double(cell.quantityTextField.text ?? "0") ?? 0.0
         food.updateFood(times, week, quantity)
         self.foods.insert(food, at: indexPath.row)
+    }
+    func updateCell(with cell: FoodTableViewCell, and food: Food) {
+        if let times = food.times {
+            if times > 0 {
+                cell.foodImageView.tintColor = #colorLiteral(red: 0.9361700416, green: 0.4429646432, blue: 0.3427112997, alpha: 1)
+            }
+            cell.timesTextField.text = String(times)
+        }
+        if let quantity = food.quantity {
+            if quantity == 0.0 {
+                cell.quantityTextField.text = "0"
+            }else {
+                cell.quantityTextField.text = String(quantity)
+            }
+        }
+        if let weekly = food.weekly {
+            cell.weekMonthSegmentedControl.selectedSegmentIndex = weekly ? 0:1
+        }
     }
 }
 
@@ -83,6 +101,7 @@ extension FoodsTableViewController {
         if cell.timesTextField.text == " " || cell.timesTextField.text == ""{
             cell.timesTextField.text = "0"
         }
+        self.updateCell(with: cell, and: food)
         cell.selectionStyle = .none
         ViewFormatter.addToolbar(to: cell.quantityTextField)
         ViewFormatter.addToolbar(to: cell.timesTextField)
@@ -132,3 +151,4 @@ extension FoodsTableViewController {
         }
     }
 }
+

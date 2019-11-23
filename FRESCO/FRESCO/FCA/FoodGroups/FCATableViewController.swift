@@ -13,6 +13,7 @@ class FoodGroupsTableViewController: UITableViewController {
     let sections = FCA.sections
     let foodGroups = FCA.foodGroups
     let foods = FCA.foods
+    private let identifier = "FoodGroupCell"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,7 +28,7 @@ class FoodGroupsTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "FCA_identifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath)
         let category = foodGroups[indexPath.section][indexPath.row]
         cell.textLabel?.text = category
         cell.textLabel?.font = UIFont(name: "SF Pro Text", size: 16)
