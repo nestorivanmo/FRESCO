@@ -18,15 +18,34 @@ class FoodTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+}
 
+extension FoodTableViewController {
+    @IBAction func timesTextFieldChanged(_ sender: Any) {
+        guard let cell = self.getCurrentCell() else {return}
+        if cell.timesTextField.text == "0" || cell.timesTextField.text == ""{
+            cell.foodImageView.tintColor = .lightGray
+        } else {
+            cell.foodImageView.tintColor = #colorLiteral(red: 0.9361700416, green: 0.4429646432, blue: 0.3427112997, alpha: 1)
+        }
+    }
+    @IBAction func weekMonthSegmentedControlChanged(_ sender: Any) {
+        guard let cell = self.getCurrentCell() else {return}
+        if cell.weekMonthSegmentedControl.selectedSegmentIndex == 0 {
+            self.modifyQuantityLabel(week: true, from: cell)
+        } else {
+            self.modifyQuantityLabel(week: false, from: cell)
+        }
+    }
+}
+
+extension FoodTableViewController {
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
-
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return foods.count
     }
-
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as! FoodTableViewCell
         let food = foods[indexPath.row]
@@ -40,7 +59,6 @@ class FoodTableViewController: UITableViewController {
         ViewFormatter.addToolbar(to: cell.timesTextField)
         return cell
     }
-    
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         let normalCellHeight: CGFloat = 44
         let expandedCellHeight: CGFloat = 150
@@ -49,29 +67,34 @@ class FoodTableViewController: UITableViewController {
         }
         return normalCellHeight
     }
-    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         isFoodSelectionHidden = !isFoodSelectionHidden
         indexOfCellToExpand = isFoodSelectionHidden ? -1:indexPath.row
         tableView.beginUpdates()
         tableView.endUpdates()
         
-        guard let indexPath = tableView.indexPathForSelectedRow else {return}
-        let cell = tableView.cellForRow(at: indexPath) as! FoodTableViewCell
+        guard let cell = self.getCurrentCell() else {return}
         if cell.timesTextField.text == " " || cell.timesTextField.text == ""{
             cell.timesTextField.text = "0"
         }
         cell.timesTextField.resignFirstResponder()
         cell.quantityTextField.resignFirstResponder()
     }
-    
-    @IBAction func timesTextFieldChanged(_ sender: Any) {
-        guard let indexPath = tableView.indexPathForSelectedRow else {return}
+}
+
+extension FoodTableViewController {
+    func getCurrentCell() -> FoodTableViewCell? {
+        guard let indexPath = tableView.indexPathForSelectedRow else {return nil}
         let cell = tableView.cellForRow(at: indexPath) as! FoodTableViewCell
-        if cell.timesTextField.text == "0" || cell.timesTextField.text == ""{
-            cell.foodImageView.tintColor = .lightGray
+        return cell
+    }
+    func modifyQuantityLabel(week: Bool, from cell: FoodTableViewCell) {
+        if week {
+            cell.quantityTextField.isEnabled = true
+            cell.quantityTextField.textColor = #colorLiteral(red: 0.9361700416, green: 0.4429646432, blue: 0.3427112997, alpha: 1)
         } else {
-            cell.foodImageView.tintColor = #colorLiteral(red: 0.9361700416, green: 0.4429646432, blue: 0.3427112997, alpha: 1)
+            cell.quantityTextField.isEnabled = false
+            cell.quantityTextField.textColor = .tertiaryLabel
         }
-    }    
+    }
 }
