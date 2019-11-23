@@ -779,7 +779,7 @@
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" name="CustomTableViewCellColor"/>
                                 <connections>
-                                    <segue destination="dSV-bC-pbE" kind="show" identifier="showFCADetail" id="Nad-fT-1Qs"/>
+                                    <segue destination="dSV-bC-pbE" kind="show" identifier="ShowFoods" id="Nad-fT-1Qs"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -799,7 +799,7 @@
         <scene sceneID="dzV-5T-EiO">
             <objects>
                 <tableViewController id="dSV-bC-pbE" customClass="FoodTableViewController" customModule="FRESCO" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="imr-gi-TNf">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="imr-gi-TNf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" name="CustomBackgroundColor"/>
@@ -841,23 +841,20 @@
                                                 <segment title="Mes"/>
                                             </segments>
                                         </segmentedControl>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="veces por" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KTZ-AT-3Qw">
-                                            <rect key="frame" x="95" y="111.5" width="56" height="14"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="56" id="Woa-Lv-CEp"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="12"/>
-                                            <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="veces por" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KTZ-AT-3Qw">
+                                            <rect key="frame" x="94.5" y="114.5" width="57.5" height="16"/>
+                                            <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="13"/>
+                                            <color key="textColor" systemColor="tertiaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p0O-uo-xgb">
-                                            <rect key="frame" x="254.5" y="84.5" width="68.5" height="17.5"/>
-                                            <fontDescription key="fontDescription" name="SFProText-Bold" family="SF Pro Text" pointSize="15"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p0O-uo-xgb">
+                                            <rect key="frame" x="231" y="116" width="102.5" height="15.5"/>
+                                            <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="13"/>
                                             <color key="textColor" systemColor="tertiaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="H4C-Ks-pF0">
-                                            <rect key="frame" x="198" y="77" width="51.5" height="34"/>
+                                            <rect key="frame" x="256.5" y="77" width="51.5" height="34"/>
                                             <color key="backgroundColor" systemColor="tertiarySystemBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <color key="textColor" name="CustomOrange"/>
                                             <fontDescription key="fontDescription" name="SFProText-Bold" family="SF Pro Text" pointSize="16"/>
@@ -866,23 +863,23 @@
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="b9g-Zj-GHG" firstAttribute="width" secondItem="tes-sQ-HCe" secondAttribute="width" multiplier="0.15" id="39Q-u9-RNy"/>
-                                        <constraint firstItem="p0O-uo-xgb" firstAttribute="leading" secondItem="H4C-Ks-pF0" secondAttribute="trailing" constant="5" id="5w5-hz-zzF"/>
-                                        <constraint firstItem="p0O-uo-xgb" firstAttribute="firstBaseline" secondItem="b9g-Zj-GHG" secondAttribute="firstBaseline" id="Bpb-t6-aup"/>
+                                        <constraint firstItem="p0O-uo-xgb" firstAttribute="centerX" secondItem="H4C-Ks-pF0" secondAttribute="centerX" id="5ED-ex-cow"/>
                                         <constraint firstItem="sr9-YP-pS4" firstAttribute="height" secondItem="3Hx-fU-A55" secondAttribute="height" id="Duw-Zt-HBJ"/>
+                                        <constraint firstItem="H4C-Ks-pF0" firstAttribute="firstBaseline" secondItem="b9g-Zj-GHG" secondAttribute="firstBaseline" id="JGx-Z9-rpA"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="sr9-YP-pS4" secondAttribute="trailing" id="Pls-q7-oui"/>
-                                        <constraint firstItem="H4C-Ks-pF0" firstAttribute="width" secondItem="tes-sQ-HCe" secondAttribute="width" multiplier="0.15" id="Xzf-oy-sZg"/>
-                                        <constraint firstItem="H4C-Ks-pF0" firstAttribute="firstBaseline" secondItem="b9g-Zj-GHG" secondAttribute="firstBaseline" id="cWQ-vz-iCj"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="p0O-uo-xgb" secondAttribute="trailing" constant="5" id="dGT-uP-fBc"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="H4C-Ks-pF0" secondAttribute="trailing" constant="20" id="T7M-eS-T1b"/>
+                                        <constraint firstItem="H4C-Ks-pF0" firstAttribute="width" secondItem="tes-sQ-HCe" secondAttribute="width" multiplier="0.15" id="cBL-bb-Iom"/>
                                         <constraint firstItem="3Hx-fU-A55" firstAttribute="leading" secondItem="tes-sQ-HCe" secondAttribute="leading" constant="10" id="enV-NH-v93"/>
                                         <constraint firstItem="sr9-YP-pS4" firstAttribute="top" secondItem="tes-sQ-HCe" secondAttribute="topMargin" id="fm3-x3-Ba0"/>
-                                        <constraint firstItem="KTZ-AT-3Qw" firstAttribute="top" secondItem="H81-8z-Bc9" secondAttribute="bottom" constant="2" id="g4T-P5-Dm5"/>
+                                        <constraint firstItem="KTZ-AT-3Qw" firstAttribute="top" secondItem="H81-8z-Bc9" secondAttribute="bottom" constant="5" id="g4T-P5-Dm5"/>
                                         <constraint firstItem="H81-8z-Bc9" firstAttribute="width" secondItem="tes-sQ-HCe" secondAttribute="width" multiplier="0.33" id="h2G-8L-1JR"/>
                                         <constraint firstItem="b9g-Zj-GHG" firstAttribute="leading" secondItem="3Hx-fU-A55" secondAttribute="leading" id="iLN-gH-sfR"/>
                                         <constraint firstItem="sr9-YP-pS4" firstAttribute="leading" secondItem="3Hx-fU-A55" secondAttribute="trailing" constant="10" id="lE9-dX-b2n"/>
+                                        <constraint firstItem="p0O-uo-xgb" firstAttribute="top" secondItem="H4C-Ks-pF0" secondAttribute="bottom" constant="5" id="opx-Xs-YOV"/>
                                         <constraint firstItem="KTZ-AT-3Qw" firstAttribute="centerX" secondItem="H81-8z-Bc9" secondAttribute="centerX" id="qMn-fT-YMA"/>
                                         <constraint firstItem="b9g-Zj-GHG" firstAttribute="top" secondItem="3Hx-fU-A55" secondAttribute="bottom" constant="40" id="t4f-0B-71g"/>
                                         <constraint firstItem="H81-8z-Bc9" firstAttribute="firstBaseline" secondItem="b9g-Zj-GHG" secondAttribute="firstBaseline" id="tkc-nT-dQj"/>
-                                        <constraint firstItem="p0O-uo-xgb" firstAttribute="width" secondItem="tes-sQ-HCe" secondAttribute="width" multiplier="0.2" id="vgd-Jw-quR"/>
+                                        <constraint firstItem="p0O-uo-xgb" firstAttribute="width" secondItem="tes-sQ-HCe" secondAttribute="width" multiplier="0.3" id="vgd-Jw-quR"/>
                                         <constraint firstItem="H81-8z-Bc9" firstAttribute="leading" secondItem="b9g-Zj-GHG" secondAttribute="trailing" constant="5" id="wMF-bT-Blb"/>
                                         <constraint firstItem="3Hx-fU-A55" firstAttribute="top" secondItem="tes-sQ-HCe" secondAttribute="top" constant="7" id="x2k-2v-GtB"/>
                                     </constraints>

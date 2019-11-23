@@ -11,12 +11,11 @@ import UIKit
 class FCATableViewController: UITableViewController {
 
     let sections = FCA.sections
-    let categories = FCA.foodGroups
-    let categoriesOptions = FCA.foods
+    let foodGroups = FCA.foodGroups
+    let foods = FCA.foods
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.clearsSelectionOnViewWillAppear = false
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -24,14 +23,15 @@ class FCATableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.categories[section].count
+        return self.foodGroups[section].count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FCA_identifier", for: indexPath)
+        let category = foodGroups[indexPath.section][indexPath.row]
+        cell.textLabel?.text = category
         cell.textLabel?.font = UIFont(name: "SF Pro Text", size: 16)
         cell.textLabel?.font = .boldSystemFont(ofSize: 16)
-        cell.textLabel?.text = self.categories[indexPath.section][indexPath.row]
         return cell
     }
     
@@ -50,16 +50,16 @@ class FCATableViewController: UITableViewController {
         title.backgroundColor = .clear
         title.font = UIFont(name: FixedSize.font, size: FixedSize.tableViewHeaderSize)
         title.font = UIFont.boldSystemFont(ofSize: FixedSize.tableViewHeaderSize)
-        
         return title
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard segue.identifier == "showFCADetail" else {return}
+        guard segue.identifier == "ShowFoods" else {return}
         guard let newIndexPath = tableView.indexPathForSelectedRow else {return}
         let fcaDetailViewController = segue.destination as! FoodTableViewController
-        fcaDetailViewController.navigationItem.title = categories[newIndexPath.section][newIndexPath.row]
-        fcaDetailViewController.options = categoriesOptions[newIndexPath.row]
+        let foodGroup = foodGroups[newIndexPath.section][newIndexPath.row]
+        fcaDetailViewController.navigationItem.title = foodGroup
+        fcaDetailViewController.foods = foods[newIndexPath.row]
     }
     
 }
