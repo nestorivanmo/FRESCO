@@ -11,6 +11,7 @@
 		B22891E223872FC300B54E32 /* ViewFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22891E123872FC300B54E32 /* ViewFormatter.swift */; };
 		B22891E52387345F00B54E32 /* EnergyRequirement.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22891E42387345F00B54E32 /* EnergyRequirement.swift */; };
 		B22891E72387348600B54E32 /* MacroNutrient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22891E62387348600B54E32 /* MacroNutrient.swift */; };
+		B24FBD7F2388D0E30067DA77 /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24FBD7E2388D0E30067DA77 /* Food.swift */; };
 		B25CF3F22386E0EE00737E5C /* GeneralTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25CF3F12386E0EE00737E5C /* GeneralTableViewController.swift */; };
 		B25CF3F52386E11200737E5C /* DatosGeneralesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25CF3F42386E11200737E5C /* DatosGeneralesTableViewController.swift */; };
 		B299AF6723858CEA000F31A3 /* FCATableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B299AF6623858CEA000F31A3 /* FCATableViewController.swift */; };
@@ -53,6 +54,7 @@
 		B22891E123872FC300B54E32 /* ViewFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewFormatter.swift; sourceTree = "<group>"; };
 		B22891E42387345F00B54E32 /* EnergyRequirement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnergyRequirement.swift; sourceTree = "<group>"; };
 		B22891E62387348600B54E32 /* MacroNutrient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacroNutrient.swift; sourceTree = "<group>"; };
+		B24FBD7E2388D0E30067DA77 /* Food.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Food.swift; sourceTree = "<group>"; };
 		B25CF3F12386E0EE00737E5C /* GeneralTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralTableViewController.swift; sourceTree = "<group>"; };
 		B25CF3F42386E11200737E5C /* DatosGeneralesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatosGeneralesTableViewController.swift; sourceTree = "<group>"; };
 		B299AF6623858CEA000F31A3 /* FCATableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FCATableViewController.swift; sourceTree = "<group>"; };
@@ -142,8 +144,8 @@
 			isa = PBXGroup;
 			children = (
 				B2AF0D5B238593030011E57C /* Models */,
-				B24FBD7D2388CCA50067DA77 /* FoodCategories */,
 				B2AF0D60238596E10011E57C /* Foods */,
+				B24FBD7D2388CCA50067DA77 /* FoodCategories */,
 			);
 			path = FCA;
 			sourceTree = "<group>";
@@ -221,6 +223,7 @@
 			isa = PBXGroup;
 			children = (
 				B2AF0D5C2385930E0011E57C /* FCA.swift */,
+				B24FBD7E2388D0E30067DA77 /* Food.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -371,6 +374,7 @@
 				B22891E223872FC300B54E32 /* ViewFormatter.swift in Sources */,
 				B2B0DB5D2387245F00C34C0F /* IMC.swift in Sources */,
 				B299AF6723858CEA000F31A3 /* FCATableViewController.swift in Sources */,
+				B24FBD7F2388D0E30067DA77 /* Food.swift in Sources */,
 				B2B0DB5F2387249300C34C0F /* MathManager.swift in Sources */,
 				B2D47CF82386543400A067A7 /* IntroductionPageViewController.swift in Sources */,
 				B2AF0D5F238596DD0011E57C /* FoodTableViewController.swift in Sources */,

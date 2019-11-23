@@ -11,8 +11,8 @@ import UIKit
 class FCATableViewController: UITableViewController {
 
     let sections = FCA.sections
-    let categories = FCA.categories
-    let categoriesOptions = FCA.categoriesOptions
+    let categories = FCA.foodGroups
+    let categoriesOptions = FCA.foods
     
     override func viewDidLoad() {
         super.viewDidLoad()

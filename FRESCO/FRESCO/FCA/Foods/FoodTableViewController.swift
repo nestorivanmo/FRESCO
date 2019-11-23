@@ -11,7 +11,7 @@ import UIKit
 class FoodTableViewController: UITableViewController {
     
     private let identifier = "FoodCell"
-    var options = [String]()
+    var options = [Food]()
     var isFoodSelectionHidden = true
     var indexOfCellToExpand = -1
     
@@ -30,7 +30,9 @@ class FoodTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as! FoodTableViewCell
-        cell.foodLabel.text = options[indexPath.row]
+        let food = options[indexPath.row]
+        cell.foodLabel.text = food.name
+        cell.quantityLabel.text = String(Substring(Unit(rawValue: "\(food.unit)")!.rawValue))
         ViewFormatter.addToolbar(to: cell.quantityTextField)
         ViewFormatter.addToolbar(to: cell.timesTextField)
         return cell
