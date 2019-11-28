@@ -51,6 +51,12 @@ extension FoodGroupsTableViewController {
             print("\t\(fg.name)")
         }
     }
+    func resetFCA() {
+        foodGroups = FCA.fg
+        resultsBarButtonItem.isEnabled = false
+        tableView.reloadData()
+        FoodGroup.save(foodGroups)
+    }
 }
 
 extension FoodGroupsTableViewController {
@@ -69,13 +75,15 @@ extension FoodGroupsTableViewController {
         } else if segue.identifier == "ShowResults" {
             
         } else if segue.identifier == "ShowExtraInformation" {
-            let destinationVC = segue.destination as! ExtraInformationViewController
+            //do sth
         }
     }
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         guard let indexPath = tableView.indexPathForSelectedRow else {return true}
         if indexPath.section == 1 {
-            self.performSegue(withIdentifier: "ShowExtraInformation", sender: nil)
+            if indexPath.row == 0 {
+                self.performSegue(withIdentifier: "ShowExtraInformation", sender: nil)
+            }
             return false
         }
         return true
@@ -150,5 +158,19 @@ extension FoodGroupsTableViewController {
     }
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return CGFloat(44)
+    }
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.section == 1 {
+            if indexPath.row == 1 {
+                let alertController = UIAlertController(title: "Reiniciar FCA", message: "¿Estás segur@ que quieres reiniciar el FCA?", preferredStyle: .alert)
+                let cancelAction = UIAlertAction(title: "Cancelar", style: .cancel, handler: nil)
+                let resetAction = UIAlertAction(title: "Sí", style: .destructive) { (action) in
+                    self.resetFCA()
+                }
+                alertController.addAction(cancelAction)
+                alertController.addAction(resetAction)
+                self.present(alertController, animated: true, completion: nil)
+            }
+        }
     }
 }
