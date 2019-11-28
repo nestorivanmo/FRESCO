@@ -74,6 +74,11 @@ extension FoodGroupsTableViewController {
 //            self.foods.insert(sourceVC.foods, at: foodGroupIndex)
             self.foodGroups[foodGroupIndex].foods = sourceVC.foods
             self.foodGroups[foodGroupIndex].checked = sourceVC.shouldCheckFoodGroup
+            if self.foodGroups[foodGroupIndex].checked {
+                let indexPath = IndexPath(row: foodGroupIndex, section: 0)
+                let cell = tableView.cellForRow(at: indexPath) as! FoodGroupTableViewCell
+                cell.foodGroupEmoji.text = self.emojis[foodGroupIndex]
+            }
             self.updateResultsBarButtonItem()
         }
     }
@@ -95,9 +100,10 @@ extension FoodGroupsTableViewController {
 //        let category = foodGroups[indexPath.section][indexPath.row]
         let foodGroup = foodGroups[indexPath.row]
         let category = foodGroup.name
-        let emoji = emojis[indexPath.row]
+//        let emoji = emojis[indexPath.row]
         cell.foodGroupLabel.text = category
-        cell.foodGroupEmoji.text = indexPath.section == 0 ? emoji : ""
+//        cell.foodGroupEmoji.text = indexPath.section == 0 ? emoji : ""
+        cell.foodGroupEmoji.text = ""
         return cell
     }
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
