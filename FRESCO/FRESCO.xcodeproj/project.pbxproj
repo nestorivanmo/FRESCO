@@ -14,6 +14,7 @@
 		B24FBD7F2388D0E30067DA77 /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24FBD7E2388D0E30067DA77 /* Food.swift */; };
 		B25CF3F22386E0EE00737E5C /* GeneralTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25CF3F12386E0EE00737E5C /* GeneralTableViewController.swift */; };
 		B25CF3F52386E11200737E5C /* DatosGeneralesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25CF3F42386E11200737E5C /* DatosGeneralesTableViewController.swift */; };
+		B28E4CE72389D9EF00D50754 /* FoodGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28E4CE62389D9EF00D50754 /* FoodGroup.swift */; };
 		B29B4DC2238578AE002C738E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29B4DC1238578AE002C738E /* AppDelegate.swift */; };
 		B29B4DC4238578AE002C738E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29B4DC3238578AE002C738E /* SceneDelegate.swift */; };
 		B29B4DC6238578AE002C738E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29B4DC5238578AE002C738E /* ViewController.swift */; };
@@ -58,6 +59,7 @@
 		B24FBD7E2388D0E30067DA77 /* Food.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Food.swift; sourceTree = "<group>"; };
 		B25CF3F12386E0EE00737E5C /* GeneralTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralTableViewController.swift; sourceTree = "<group>"; };
 		B25CF3F42386E11200737E5C /* DatosGeneralesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatosGeneralesTableViewController.swift; sourceTree = "<group>"; };
+		B28E4CE62389D9EF00D50754 /* FoodGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodGroup.swift; sourceTree = "<group>"; };
 		B29B4DBE238578AE002C738E /* FRESCO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FRESCO.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B29B4DC1238578AE002C738E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B29B4DC3238578AE002C738E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -128,6 +130,7 @@
 		B25CF3F02386E0CE00737E5C /* General */ = {
 			isa = PBXGroup;
 			children = (
+				B2EA673E238E14710029B300 /* Results */,
 				B2D8F05F2386F89900350986 /* Models */,
 				B25CF3F32386E10900737E5C /* DatosGenerales */,
 				B25CF3F12386E0EE00737E5C /* GeneralTableViewController.swift */,
@@ -227,6 +230,7 @@
 			children = (
 				B2AF0D5C2385930E0011E57C /* FCA.swift */,
 				B24FBD7E2388D0E30067DA77 /* Food.swift */,
+				B28E4CE62389D9EF00D50754 /* FoodGroup.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -274,6 +278,13 @@
 				B22891DF23872C8200B54E32 /* PhysicalActivity.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		B2EA673E238E14710029B300 /* Results */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Results;
 			sourceTree = "<group>";
 		};
 		B2EFA16C2386F6C90092D998 /* FixedSizes */ = {
@@ -392,6 +403,7 @@
 				B2BCA521238903AB002EC885 /* FoodsTableViewController.swift in Sources */,
 				B2EFA16E2386F6DB0092D998 /* FixedSize.swift in Sources */,
 				B29B4DC6238578AE002C738E /* ViewController.swift in Sources */,
+				B28E4CE72389D9EF00D50754 /* FoodGroup.swift in Sources */,
 				B22891E023872C8200B54E32 /* PhysicalActivity.swift in Sources */,
 				B22891E72387348600B54E32 /* MacroNutrient.swift in Sources */,
 				B25CF3F52386E11200737E5C /* DatosGeneralesTableViewController.swift in Sources */,

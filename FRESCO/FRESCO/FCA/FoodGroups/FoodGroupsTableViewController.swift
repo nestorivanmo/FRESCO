@@ -10,23 +10,10 @@ import UIKit
 class FoodGroupsTableViewController: UITableViewController {
 
     let sections = FCA.sections
-    let foodGroups = FCA.foodGroups
+//    let foodGroups = FCA.foodGroups
+    var foodGroups = FCA.fg
     var foods = FCA.foods
     let emojis = ["🍅", "🍊", "🥖", "🥔", "🥜", "🥑", "🥬", "🐟", "🥛", "🥤", "🍷"]
-    let colors =
-        [
-            UIColor(named: "1-Vegetable"),
-            UIColor(named: "2-Fruit"),
-            UIColor(named: "3-CerealN"),
-            UIColor(named: "4-CerealY"),
-            UIColor(named: "5-Leg"),
-            UIColor(named: "6-Animal"),
-            UIColor(named: "7-Milk"),
-            UIColor(named: "8-Oil"),
-            UIColor(named: "9-Oleag"),
-            UIColor(named: "10-Sugar"),
-            UIColor(named: "11-Alcohol"),
-        ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,20 +26,24 @@ extension FoodGroupsTableViewController {
         if segue.identifier == "ShowFoods" {
             guard let newIndexPath = tableView.indexPathForSelectedRow else {return}
             let destinationVC = segue.destination as! FoodsTableViewController
-            let foodGroup = foodGroups[newIndexPath.section][newIndexPath.row]
+//            let foodGroup = foodGroups[newIndexPath.section][newIndexPath.row]
+            let foodGroup = foodGroups[newIndexPath.section].name
             destinationVC.navigationItem.title = foodGroup
-            destinationVC.foods = foods[newIndexPath.row]
+//            destinationVC.foods = foods[newIndexPath.row]
+            destinationVC.foods = foodGroups[newIndexPath.row].foods
             destinationVC.foodGroupIndex = newIndexPath.row
+        } else if segue.identifier == "ShowResults" {
+            
         }
     }
     @IBAction func unwindToFoodGroups(segue: UIStoryboardSegue) {
-        //segue from Listo bar buttom item: "ReturnToFoodGroups"
         if segue.identifier == "ReturnToFoodGroups" {
             let sourceVC = segue.source as! FoodsTableViewController
             guard let foodGroupIndex = sourceVC.foodGroupIndex else {return}
-            self.foods.remove(at: foodGroupIndex)
-            self.foods.insert(sourceVC.foods, at: foodGroupIndex)
-            print(self.foods)
+//            self.foods.remove(at: foodGroupIndex)
+//            self.foods.insert(sourceVC.foods, at: foodGroupIndex)
+            self.foodGroups[foodGroupIndex].foods = sourceVC.foods
+            self.foodGroups[foodGroupIndex].checked = sourceVC.shouldCheckFoodGroup
         }
     }
 }
@@ -62,14 +53,20 @@ extension FoodGroupsTableViewController {
         return self.sections.count
     }
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.foodGroups[section].count
+//        return self.foodGroups[section].count
+        if section == 0 {
+            return self.foodGroups.count
+        }
+        return 1
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FoodGroupCell", for: indexPath) as! FoodGroupTableViewCell
-        let category = foodGroups[indexPath.section][indexPath.row]
+//        let category = foodGroups[indexPath.section][indexPath.row]
+        let foodGroup = foodGroups[indexPath.row]
+        let category = foodGroup.name
         let emoji = emojis[indexPath.row]
         cell.foodGroupLabel.text = category
-        cell.foodGroupEmoji.text = indexPath.section == 0 ? emoji:""
+        cell.foodGroupEmoji.text = indexPath.section == 0 ? emoji : ""
         return cell
     }
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {

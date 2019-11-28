@@ -15,11 +15,17 @@ class FoodsTableViewController: UITableViewController {
     var foodGroupIndex: Int?
     var isFoodSelectionHidden = true
     var indexOfCellToExpand = -1
-    
+    var shouldCheckFoodGroup = false
+
     @IBOutlet weak var readyBarButtonItem: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard segue.identifier == "ReturnToFoodGroups" else {return}
+        self.shouldCheckFoodGroup = true
     }
 }
 

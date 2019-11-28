@@ -17,6 +17,7 @@ class GeneralTableViewController: UITableViewController {
     @IBOutlet weak var physAcFirstCircle: UIImageView!
     @IBOutlet weak var physAcSecondCircle: UIImageView!
     @IBOutlet weak var physAcThirdCircle: UIImageView!
+    
     @IBOutlet weak var totalKCalIdealLabel: UILabel!
     @IBOutlet weak var hcKcalIdealLabel: UILabel!
     @IBOutlet weak var protKcalIdealLabel: UILabel!
@@ -72,6 +73,20 @@ extension GeneralTableViewController {
             guard let newPatient = sourceViewController.patient else {return}
             Patient.save(newPatient)
             self.updateUIState()
+        }
+    }
+    
+    @IBAction func unwindFromResults(_ segue: UIStoryboardSegue) {
+        if segue.identifier == "ShowResults" {
+            let indexPath = IndexPath(row: 0, section: 4)
+            tableView.scrollToRow(at: indexPath, at: .top, animated: true)
+            let cell = tableView.cellForRow(at: indexPath)
+            UIView.animate(withDuration: 1) {
+                cell?.backgroundColor = .lightGray
+            }
+            UIView.animate(withDuration: 0.5) {
+                cell?.backgroundColor = UIColor(named: "CustomTableViewCellColor")
+            }
         }
     }
     
@@ -193,4 +208,8 @@ extension GeneralTableViewController {
             }
         }
     }
+}
+
+extension UITableViewCell {
+    
 }
