@@ -596,7 +596,14 @@
                             <outlet property="delegate" destination="yqL-I9-MeP" id="E69-uh-ZSJ"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="General" id="pA8-cx-6Rx"/>
+                    <navigationItem key="navigationItem" title="General" id="pA8-cx-6Rx">
+                        <barButtonItem key="rightBarButtonItem" title="Nombre" style="plain" id="I2n-oZ-SBh">
+                            <color key="tintColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <segue destination="WQg-4C-5d2" kind="show" id="ble-pa-UOA"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="hcGrIdealLabel" destination="nne-Yp-CSK" id="U0D-KT-apq"/>
                         <outlet property="hcKcalIdealLabel" destination="f2V-83-JXy" id="mLn-bK-wjI"/>
@@ -604,6 +611,7 @@
                         <outlet property="imcLabel" destination="Ico-5d-M7L" id="ZX6-41-Uac"/>
                         <outlet property="lipGrIdealLabel" destination="Xd7-Yp-6ya" id="ztq-VN-IR3"/>
                         <outlet property="lipKcalIdealLabel" destination="0s9-2i-NWl" id="ZHt-Bs-EwA"/>
+                        <outlet property="nameBarButtonItem" destination="I2n-oZ-SBh" id="Qd8-2R-bdj"/>
                         <outlet property="physAcFirstCircle" destination="Dpk-N5-g0G" id="r0Q-XY-lkm"/>
                         <outlet property="physAcLabel" destination="eVL-sh-WEz" id="x5K-xH-cjo"/>
                         <outlet property="physAcSecondCircle" destination="dP3-CL-S5K" id="i2a-ML-LQN"/>
@@ -1255,4 +1263,7 @@
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </namedColor>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="ble-pa-UOA"/>
+    </inferredMetricsTieBreakers>
 </document>

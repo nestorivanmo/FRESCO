@@ -10,6 +10,7 @@ import UIKit
 
 class GeneralTableViewController: UITableViewController {
     
+    @IBOutlet weak var nameBarButtonItem: UIBarButtonItem!
     @IBOutlet weak var heartImageView: UIImageView!
     @IBOutlet weak var imcLabel: UILabel!
     @IBOutlet weak var physAcTextField: UITextField!
@@ -108,7 +109,9 @@ extension GeneralTableViewController {
     func updateUIState() {
         ViewFormatter.addToolbar(to: physAcTextField)
         self.patient = Patient.loadPatient()
-        if let _ = self.patient {
+        if let patient = self.patient {
+            self.nameBarButtonItem.title = patient.name
+            self.nameBarButtonItem.tintColor = #colorLiteral(red: 0.9361700416, green: 0.4429646432, blue: 0.3427112997, alpha: 1)
             self.heartImageView.tintColor = #colorLiteral(red: 0.9361700416, green: 0.4429646432, blue: 0.3427112997, alpha: 1)
             self.patient?.doSomeMath()
             self.imcLabel.text = String(self.patient?.imc?.value ?? 0)
@@ -125,6 +128,7 @@ extension GeneralTableViewController {
                 self.updatePhysicalActivity(from: .error, and: 0)
             }
         } else {
+            self.nameBarButtonItem.title = ""
             self.heartImageView.tintColor = .lightGray
         }
     }
