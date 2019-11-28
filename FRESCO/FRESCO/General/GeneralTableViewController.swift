@@ -47,6 +47,14 @@ class GeneralTableViewController: UITableViewController {
         Patient.save(self.patient!)
         self.updateUIState()
     }
+
+}
+
+extension GeneralTableViewController {
+    @IBAction func physAcTextFieldDidBeginEditing(_ sender: Any) {
+        physAcTextField.selectAll(nil)
+        physAcTextField.tintColor = .systemBlue
+    }
 }
 
 extension GeneralTableViewController {
@@ -60,7 +68,6 @@ extension GeneralTableViewController {
         title.font = UIFont.boldSystemFont(ofSize: FixedSize.tableViewHeaderSize)
         return title
     }
-    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
     }
@@ -75,7 +82,6 @@ extension GeneralTableViewController {
             self.updateUIState()
         }
     }
-    
     @IBAction func unwindFromResults(_ segue: UIStoryboardSegue) {
         if segue.identifier == "ShowResults" {
             let indexPath = IndexPath(row: 0, section: 4)
@@ -89,7 +95,6 @@ extension GeneralTableViewController {
             }
         }
     }
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "EnterGeneralData" {
             guard let patient = self.patient else {return}
@@ -123,7 +128,6 @@ extension GeneralTableViewController {
             self.heartImageView.tintColor = .lightGray
         }
     }
-    
     func updatePhysicalActivity(from category: PACategory, and value: Float) {
         self.physAcTextField.text = String(value)
         self.physAcTextField.tintColor = .label
@@ -152,7 +156,6 @@ extension GeneralTableViewController {
             self.physAcTextField.font = UIFont.systemFont(ofSize: 18, weight: .regular)
         }
     }
-    
     func updatePACircles(with number: Int) {
         switch number {
         case 1:
@@ -173,7 +176,6 @@ extension GeneralTableViewController {
             physAcThirdCircle.tintColor = .lightGray
         }
     }
-    
     func updateEnergyRequirement() {
         guard let patient = self.patient else {return}
         guard let er = patient.energyRequirement else {return}
@@ -208,8 +210,4 @@ extension GeneralTableViewController {
             }
         }
     }
-}
-
-extension UITableViewCell {
-    
 }

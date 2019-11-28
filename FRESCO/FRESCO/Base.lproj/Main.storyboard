@@ -228,6 +228,7 @@
                                                     <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                                     <connections>
                                                         <action selector="physAcTextFieldChanged:" destination="yqL-I9-MeP" eventType="editingDidEnd" id="0PR-sq-gdh"/>
+                                                        <action selector="physAcTextFieldDidBeginEditing:" destination="yqL-I9-MeP" eventType="editingDidBegin" id="Dlg-aK-VJL"/>
                                                     </connections>
                                                 </textField>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="---" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eVL-sh-WEz">
