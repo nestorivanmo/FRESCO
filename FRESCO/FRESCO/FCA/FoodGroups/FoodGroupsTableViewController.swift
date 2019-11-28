@@ -14,11 +14,41 @@ class FoodGroupsTableViewController: UITableViewController {
     var foodGroups = FCA.fg
     var foods = FCA.foods
     let emojis = ["🍅", "🍊", "🥖", "🥔", "🥜", "🥑", "🥬", "🐟", "🥛", "🥤", "🍷"]
+    @IBOutlet weak var resultsBarButtonItem: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.updateResultsBarButtonItem()
     }
-    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.updateResultsBarButtonItem()
+    }
+}
+
+extension FoodGroupsTableViewController {
+    func updateResultsBarButtonItem() {
+        print("\nUpdating results bar button item\n")
+        var checked = [FoodGroup]()
+        var unchecked = [FoodGroup]()
+        for foodGroup in self.foodGroups {
+            if foodGroup.checked {
+                checked.append(foodGroup)
+            } else {
+                unchecked.append(foodGroup)
+            }
+        }
+        print("\nChecked food groups")
+        self.printFG(checked)
+        print("\nUnchecked food groups")
+        self.printFG(unchecked)
+        self.resultsBarButtonItem.isEnabled = unchecked.count == 0 ? true : false
+    }
+    func printFG(_ foodGroups: [FoodGroup]) {
+        for fg in foodGroups {
+            print("\t\(fg.name)")
+        }
+    }
 }
 
 extension FoodGroupsTableViewController {
