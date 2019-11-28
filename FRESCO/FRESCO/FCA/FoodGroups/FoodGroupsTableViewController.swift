@@ -74,6 +74,7 @@ extension FoodGroupsTableViewController {
 //            self.foods.insert(sourceVC.foods, at: foodGroupIndex)
             self.foodGroups[foodGroupIndex].foods = sourceVC.foods
             self.foodGroups[foodGroupIndex].checked = sourceVC.shouldCheckFoodGroup
+            self.updateResultsBarButtonItem()
         }
     }
 }

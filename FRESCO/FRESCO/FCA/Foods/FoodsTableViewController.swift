@@ -29,7 +29,8 @@ class FoodsTableViewController: UITableViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard segue.identifier == "ReturnToFoodGroups" else {return}
-        self.shouldCheckFoodGroup = self.checkedFoodGroups()
+//        self.shouldCheckFoodGroup = self.checkedFoodGroups()
+        self.shouldCheckFoodGroup = true
     }
 }
 
