@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B217C029238FA35B004C6BA8 /* ExtraInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B217C028238FA35B004C6BA8 /* ExtraInformationViewController.swift */; };
 		B22891E023872C8200B54E32 /* PhysicalActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22891DF23872C8200B54E32 /* PhysicalActivity.swift */; };
 		B22891E223872FC300B54E32 /* ViewFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22891E123872FC300B54E32 /* ViewFormatter.swift */; };
 		B22891E52387345F00B54E32 /* EnergyRequirement.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22891E42387345F00B54E32 /* EnergyRequirement.swift */; };
@@ -52,6 +53,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B217C028238FA35B004C6BA8 /* ExtraInformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtraInformationViewController.swift; sourceTree = "<group>"; };
 		B22891DF23872C8200B54E32 /* PhysicalActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysicalActivity.swift; sourceTree = "<group>"; };
 		B22891E123872FC300B54E32 /* ViewFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewFormatter.swift; sourceTree = "<group>"; };
 		B22891E42387345F00B54E32 /* EnergyRequirement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnergyRequirement.swift; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 		B24FBD7D2388CCA50067DA77 /* FoodGroups */ = {
 			isa = PBXGroup;
 			children = (
+				B217C028238FA35B004C6BA8 /* ExtraInformationViewController.swift */,
 				B2F12BDA238909B90070DFFF /* CustomCells */,
 				B2BCA51E2388FB94002EC885 /* FoodGroupsTableViewController.swift */,
 			);
@@ -400,6 +403,7 @@
 				B2D47CF82386543400A067A7 /* IntroductionPageViewController.swift in Sources */,
 				B2AF0D5D2385930E0011E57C /* FCA.swift in Sources */,
 				B2F12BDC23890B010070DFFF /* FoodGroupTableViewCell.swift in Sources */,
+				B217C029238FA35B004C6BA8 /* ExtraInformationViewController.swift in Sources */,
 				B2BCA521238903AB002EC885 /* FoodsTableViewController.swift in Sources */,
 				B2EFA16E2386F6DB0092D998 /* FixedSize.swift in Sources */,
 				B29B4DC6238578AE002C738E /* ViewController.swift in Sources */,

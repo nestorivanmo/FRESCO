@@ -134,6 +134,7 @@ extension FoodGroupsTableViewController {
                 cell.foodGroupLabel.text = "Acerca de FCA"
             } else if indexPath.row == 1 {
                 cell.foodGroupLabel.text = "Reinicia FCA"
+                cell.foodGroupLabel.textColor = .systemRed
                 cell.accessoryView = nil
             }
             cell.foodGroupEmoji.text = ""
