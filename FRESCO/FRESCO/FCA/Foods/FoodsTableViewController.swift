@@ -29,7 +29,7 @@ class FoodsTableViewController: UITableViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard segue.identifier == "ReturnToFoodGroups" else {return}
-        self.shouldCheckFoodGroup = true
+        self.shouldCheckFoodGroup = self.checkedFoodGroups()
     }
 }
 
@@ -67,17 +67,29 @@ extension FoodsTableViewController {
         let quantityTFText = cell.quantityTextField.text
         if cell.weekMonthSegmentedControl.selectedSegmentIndex == 0 { //weekly
             if timesTFText == "0" || quantityTFText == "0" || (timesTFText == "") {
-                cell.foodImageView.tintColor = .lightGray
+                cell.foodImageView.tintColor = .darkGray
             } else {
                 cell.foodImageView.tintColor = #colorLiteral(red: 0.9361700416, green: 0.4429646432, blue: 0.3427112997, alpha: 1)
             }
         } else { //monthly
             if timesTFText == "0" || timesTFText == "" {
-                cell.foodImageView.tintColor = .lightGray
+                cell.foodImageView.tintColor = .darkGray
             }else {
                 cell.foodImageView.tintColor = #colorLiteral(red: 0.9361700416, green: 0.4429646432, blue: 0.3427112997, alpha: 1)
             }
         }
+    }
+    func checkedFoodGroups() -> Bool {
+        let rows = tableView.numberOfRows(inSection: 0)
+        let baseColor = #colorLiteral(red: 0.9361700416, green: 0.4429646432, blue: 0.3427112997, alpha: 1)
+        for row in 0..<rows {
+            let indexPath = IndexPath(row: row, section: 0)
+            let cell = tableView.cellForRow(at: indexPath) as! FoodTableViewCell
+            if cell.foodImageView.tintColor != baseColor {
+                return false
+            }
+        }
+        return true
     }
 }
 
