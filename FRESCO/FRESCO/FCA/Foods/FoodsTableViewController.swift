@@ -23,6 +23,10 @@ class FoodsTableViewController: UITableViewController {
         super.viewDidLoad()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard segue.identifier == "ReturnToFoodGroups" else {return}
         self.shouldCheckFoodGroup = true
@@ -57,23 +61,39 @@ extension FoodsTableViewController {
             cell.weekMonthSegmentedControl.selectedSegmentIndex = weekly ? 0:1
         }
     }
+    func updateFoodImageView() {
+        guard let cell = self.getCurrentCell() else {return}
+        let timesTFText = cell.timesTextField.text
+        let quantityTFText = cell.quantityTextField.text
+        if cell.weekMonthSegmentedControl.selectedSegmentIndex == 0 { //weekly
+            if timesTFText == "0" || quantityTFText == "0" || (timesTFText == "") {
+                cell.foodImageView.tintColor = .lightGray
+            } else {
+                cell.foodImageView.tintColor = #colorLiteral(red: 0.9361700416, green: 0.4429646432, blue: 0.3427112997, alpha: 1)
+            }
+        } else { //monthly
+            if timesTFText == "0" || timesTFText == "" {
+                cell.foodImageView.tintColor = .lightGray
+            }else {
+                cell.foodImageView.tintColor = #colorLiteral(red: 0.9361700416, green: 0.4429646432, blue: 0.3427112997, alpha: 1)
+            }
+        }
+    }
 }
 
 extension FoodsTableViewController {
     @IBAction func timesTextFieldChanged(_ sender: Any) {
+        updateFoodImageView()
         guard let cell = self.getCurrentCell() else {return}
-        if cell.timesTextField.text == "0" || cell.timesTextField.text == ""{
-            cell.foodImageView.tintColor = .lightGray
-        } else {
-            cell.foodImageView.tintColor = #colorLiteral(red: 0.9361700416, green: 0.4429646432, blue: 0.3427112997, alpha: 1)
-        }
         updateFoodWith(cell)
     }
     @IBAction func quantityTextFieldChanged(_ sender: Any) {
+        updateFoodImageView()
         guard let cell = self.getCurrentCell() else {return}
         updateFoodWith(cell)
     }
     @IBAction func weekMonthSegmentedControlChanged(_ sender: Any) {
+        updateFoodImageView()
         guard let cell = self.getCurrentCell() else {return}
         if cell.weekMonthSegmentedControl.selectedSegmentIndex == 0 {
             self.modifyQuantityLabel(week: true, from: cell)
@@ -122,6 +142,7 @@ extension FoodsTableViewController {
         return normalCellHeight
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        updateFoodImageView()
         isFoodSelectionHidden = !isFoodSelectionHidden
         indexOfCellToExpand = isFoodSelectionHidden ? -1:indexPath.row
         tableView.beginUpdates()
