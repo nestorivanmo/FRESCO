@@ -10,19 +10,21 @@ import UIKit
 class FoodGroupsTableViewController: UITableViewController {
 
     let sections = FCA.sections
-//    let foodGroups = FCA.foodGroups
-    var foodGroups = FCA.fg
-    var foods = FCA.foods
+    var foodGroups = FoodGroup.loadFoodGroups() ?? FCA.fg
     let emojis = ["🍅", "🍊", "🥖", "🥔", "🥜", "🥑", "🥬", "🐟", "🥛", "🥤", "🍷"]
     @IBOutlet weak var resultsBarButtonItem: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.updateResultsBarButtonItem()
+        updateUIState()
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        self.updateResultsBarButtonItem()
+        updateUIState()
+    }
+    func updateUIState() {
+        self.foodGroups = FoodGroup.loadFoodGroups() ?? FCA.fg
+        updateResultsBarButtonItem()
     }
 }
 
@@ -74,11 +76,12 @@ extension FoodGroupsTableViewController {
 //            self.foods.insert(sourceVC.foods, at: foodGroupIndex)
             self.foodGroups[foodGroupIndex].foods = sourceVC.foods
             self.foodGroups[foodGroupIndex].checked = sourceVC.shouldCheckFoodGroup
-            if self.foodGroups[foodGroupIndex].checked {
+            if foodGroups[foodGroupIndex].checked {
                 let indexPath = IndexPath(row: foodGroupIndex, section: 0)
                 let cell = tableView.cellForRow(at: indexPath) as! FoodGroupTableViewCell
                 cell.foodGroupEmoji.text = self.emojis[foodGroupIndex]
             }
+            FoodGroup.save(foodGroups)
             self.updateResultsBarButtonItem()
         }
     }
@@ -91,7 +94,7 @@ extension FoodGroupsTableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 //        return self.foodGroups[section].count
         if section == 0 {
-            return self.foodGroups.count
+            return foodGroups.count
         }
         return 1
     }
@@ -100,10 +103,9 @@ extension FoodGroupsTableViewController {
 //        let category = foodGroups[indexPath.section][indexPath.row]
         let foodGroup = foodGroups[indexPath.row]
         let category = foodGroup.name
-//        let emoji = emojis[indexPath.row]
         cell.foodGroupLabel.text = category
-//        cell.foodGroupEmoji.text = indexPath.section == 0 ? emoji : ""
-        cell.foodGroupEmoji.text = ""
+        let emoji = emojis[indexPath.row]
+        cell.foodGroupEmoji.text = foodGroup.checked ? emoji : ""
         return cell
     }
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {

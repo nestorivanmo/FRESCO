@@ -32,6 +32,7 @@ class FoodsTableViewController: UITableViewController {
 //        self.shouldCheckFoodGroup = self.checkedFoodGroups()
         self.shouldCheckFoodGroup = true
     }
+    
 }
 
 extension FoodsTableViewController {
