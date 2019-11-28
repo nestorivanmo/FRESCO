@@ -114,7 +114,7 @@
                             <tableViewSection headerTitle="Paciente" id="k3c-zS-uCI">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="GeneralCell" rowHeight="44" id="RL1-dF-nc9">
-                                        <rect key="frame" x="0.0" y="55.5" width="343" height="44"/>
+                                        <rect key="frame" x="16" y="55.5" width="343" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="RL1-dF-nc9" id="9k1-cf-C2J">
                                             <rect key="frame" x="0.0" y="0.0" width="317" height="44"/>
@@ -992,6 +992,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="resultsBarButtonItem" destination="BHS-Ya-Saf" id="vSi-Or-veA"/>
+                        <segue destination="wGo-1J-bJm" kind="show" identifier="ShowExtraInformation" id="Ooi-5B-T2X"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ctl-44-1YE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1040,7 +1041,7 @@
                                             </connections>
                                         </textField>
                                         <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="H81-8z-Bc9">
-                                            <rect key="frame" x="66.5" y="73.5" width="113" height="32"/>
+                                            <rect key="frame" x="66.5" y="74" width="113" height="32"/>
                                             <segments>
                                                 <segment title="Semana"/>
                                                 <segment title="Mes"/>
@@ -1050,13 +1051,13 @@
                                             </connections>
                                         </segmentedControl>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="veces por" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KTZ-AT-3Qw">
-                                            <rect key="frame" x="94.5" y="109.5" width="57.5" height="16"/>
+                                            <rect key="frame" x="93" y="110" width="60" height="16"/>
                                             <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="13"/>
                                             <color key="textColor" systemColor="tertiaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="cups" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p0O-uo-xgb">
-                                            <rect key="frame" x="231" y="111" width="102.5" height="15.5"/>
+                                            <rect key="frame" x="231" y="111" width="102.5" height="16"/>
                                             <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="13"/>
                                             <color key="textColor" systemColor="tertiaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
@@ -1128,6 +1129,45 @@
                 <exit id="pgF-4M-Ehz" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="9132" y="1290"/>
+        </scene>
+        <!--Acerca de FCA-->
+        <scene sceneID="gji-ms-ZWD">
+            <objects>
+                <viewController id="wGo-1J-bJm" customClass="ExtraInformationViewController" customModule="FRESCO" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2ec-46-cIS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="Jz6-qs-wr1">
+                                <rect key="frame" x="10" y="96" width="355" height="167"/>
+                                <color key="backgroundColor" name="CustomBackgroundColor"/>
+                                <string key="text">El FCA, o Frecuencia de Consumo de Alimentos, es un cuestionario que permite evaluar la cantidad y calidad de los alimentos que se ingieren regularmente</string>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="wbx-xM-ved">
+                                <rect key="frame" x="67.5" y="283" width="240" height="128"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" name="CustomBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="wbx-xM-ved" firstAttribute="top" secondItem="Jz6-qs-wr1" secondAttribute="bottom" constant="20" id="7ut-hw-qPK"/>
+                            <constraint firstItem="wbx-xM-ved" firstAttribute="width" secondItem="2ec-46-cIS" secondAttribute="width" multiplier="0.64" id="Dfq-45-qVd"/>
+                            <constraint firstItem="Jz6-qs-wr1" firstAttribute="top" secondItem="In3-ux-gDq" secondAttribute="top" id="Gj3-7y-WN1"/>
+                            <constraint firstItem="wbx-xM-ved" firstAttribute="height" secondItem="2ec-46-cIS" secondAttribute="height" multiplier="0.191904" id="MtC-4I-gA0"/>
+                            <constraint firstItem="In3-ux-gDq" firstAttribute="trailing" secondItem="Jz6-qs-wr1" secondAttribute="trailing" constant="10" id="UgE-de-ata"/>
+                            <constraint firstItem="Jz6-qs-wr1" firstAttribute="height" secondItem="2ec-46-cIS" secondAttribute="height" multiplier="0.25" id="geN-U0-NWs"/>
+                            <constraint firstItem="Jz6-qs-wr1" firstAttribute="leading" secondItem="In3-ux-gDq" secondAttribute="leading" constant="10" id="oOs-Q8-wKn"/>
+                            <constraint firstItem="wbx-xM-ved" firstAttribute="centerX" secondItem="2ec-46-cIS" secondAttribute="centerX" id="pQ2-HL-Jkc"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="In3-ux-gDq"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Acerca de FCA" id="TfM-cH-jg0"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pb4-TJ-0Ff" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="8196" y="2105"/>
         </scene>
         <!--FCA-->
         <scene sceneID="cOD-bl-vFO">

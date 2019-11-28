@@ -56,17 +56,29 @@ extension FoodGroupsTableViewController {
 extension FoodGroupsTableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ShowFoods" {
-            guard let newIndexPath = tableView.indexPathForSelectedRow else {return}
+            guard let indexPath = tableView.indexPathForSelectedRow else {return}
             let destinationVC = segue.destination as! FoodsTableViewController
-//            let foodGroup = foodGroups[newIndexPath.section][newIndexPath.row]
-            let foodGroup = foodGroups[newIndexPath.section].name
-            destinationVC.navigationItem.title = foodGroup
-//            destinationVC.foods = foods[newIndexPath.row]
-            destinationVC.foods = foodGroups[newIndexPath.row].foods
-            destinationVC.foodGroupIndex = newIndexPath.row
+            if indexPath.section == 0 {
+                //let foodGroup = foodGroups[newIndexPath.section][newIndexPath.row]
+                let foodGroup = foodGroups[indexPath.section].name
+                destinationVC.navigationItem.title = foodGroup
+                //destinationVC.foods = foods[newIndexPath.row]
+                destinationVC.foods = foodGroups[indexPath.row].foods
+                destinationVC.foodGroupIndex = indexPath.row
+            }
         } else if segue.identifier == "ShowResults" {
             
+        } else if segue.identifier == "ShowExtraInformation" {
+            let destinationVC = segue.destination as! ExtraInformationViewController
         }
+    }
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        guard let indexPath = tableView.indexPathForSelectedRow else {return true}
+        if indexPath.section == 1 {
+            self.performSegue(withIdentifier: "ShowExtraInformation", sender: nil)
+            return false
+        }
+        return true
     }
     @IBAction func unwindToFoodGroups(segue: UIStoryboardSegue) {
         if segue.identifier == "ReturnToFoodGroups" {
@@ -95,17 +107,29 @@ extension FoodGroupsTableViewController {
 //        return self.foodGroups[section].count
         if section == 0 {
             return foodGroups.count
+        } else if section == 1 {
+            return 2
         }
         return 1
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FoodGroupCell", for: indexPath) as! FoodGroupTableViewCell
-//        let category = foodGroups[indexPath.section][indexPath.row]
-        let foodGroup = foodGroups[indexPath.row]
-        let category = foodGroup.name
-        cell.foodGroupLabel.text = category
-        let emoji = emojis[indexPath.row]
-        cell.foodGroupEmoji.text = foodGroup.checked ? emoji : ""
+        if indexPath.section == 0 {
+            //        let category = foodGroups[indexPath.section][indexPath.row]
+            let foodGroup = foodGroups[indexPath.row]
+            let category = foodGroup.name
+            let emoji = emojis[indexPath.row]
+            cell.foodGroupLabel.text = category
+            cell.foodGroupEmoji.text = foodGroup.checked ? emoji : ""
+        } else if indexPath.section == 1 {
+            if indexPath.row == 0 {
+                cell.foodGroupLabel.text = "Acerca de FCA"
+            } else if indexPath.row == 1 {
+                cell.foodGroupLabel.text = "Reinicia FCA"
+                cell.accessoryView = nil
+            }
+            cell.foodGroupEmoji.text = ""
+        }
         return cell
     }
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {

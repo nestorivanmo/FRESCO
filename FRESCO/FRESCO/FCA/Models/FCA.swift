@@ -141,7 +141,7 @@ struct FCA {
         ]
     static let sections = [
         "Categorías de alimentos",
-        " "
+        " ",
     ]
     static let foods = [
         [
