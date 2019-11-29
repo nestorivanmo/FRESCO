@@ -110,7 +110,7 @@ extension GeneralTableViewController {
         ViewFormatter.addToolbar(to: physAcTextField)
         self.patient = Patient.loadPatient()
         if let patient = self.patient {
-            self.nameBarButtonItem.title = patient.name
+            self.nameBarButtonItem.title = patient.name.components(separatedBy: " ").first
             self.nameBarButtonItem.tintColor = #colorLiteral(red: 0.9361700416, green: 0.4429646432, blue: 0.3427112997, alpha: 1)
             self.heartImageView.tintColor = #colorLiteral(red: 0.9361700416, green: 0.4429646432, blue: 0.3427112997, alpha: 1)
             self.patient?.doSomeMath()
