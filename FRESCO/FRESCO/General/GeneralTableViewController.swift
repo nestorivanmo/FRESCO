@@ -29,6 +29,8 @@ class GeneralTableViewController: UITableViewController {
 
     var patient: Patient?
     var imc: IMC?
+    var foodGroups: [FoodGroup]?
+    let foodGroupsHandler = FoodGroupsHandler()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -94,6 +96,9 @@ extension GeneralTableViewController {
             UIView.animate(withDuration: 0.5) {
                 cell?.backgroundColor = UIColor(named: "CustomTableViewCellColor")
             }
+            guard let foodGroups = self.foodGroups else {return}
+            let energyRequirement = foodGroupsHandler.process(foodGroups: foodGroups)
+            foodGroupsHandler.printER(energyRequirement)
         }
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -184,17 +189,14 @@ extension GeneralTableViewController {
         guard let patient = self.patient else {return}
         guard let er = patient.energyRequirement else {return}
         guard let nutrients = er.nutrients else {return}
-        
         guard let sumKcal = er.sumKcal else {return}
         self.totalKCalIdealLabel.text = String(sumKcal)
         self.totalKCalIdealLabel.tintColor = .label
         self.totalKCalIdealLabel.font = .boldSystemFont(ofSize: 18)
         
         for nutrient in nutrients {
-            
             let kcal = nutrient.kCal
             let grams = nutrient.grams
-            
             switch nutrient.type {
             case .carboHydrate:
                 self.hcKcalIdealLabel.text = String(kcal)

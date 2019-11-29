@@ -30,7 +30,7 @@ class FoodGroupsTableViewController: UITableViewController {
 
 extension FoodGroupsTableViewController {
     func updateResultsBarButtonItem() {
-        print("\nUpdating results bar button item\n")
+//        print("\nUpdating results bar button item\n")
         var checked = [FoodGroup]()
         var unchecked = [FoodGroup]()
         for foodGroup in self.foodGroups {
@@ -40,10 +40,10 @@ extension FoodGroupsTableViewController {
                 unchecked.append(foodGroup)
             }
         }
-        print("\nChecked food groups")
-        self.printFG(checked)
-        print("\nUnchecked food groups")
-        self.printFG(unchecked)
+//        print("\nChecked food groups")
+//        self.printFG(checked)
+//        print("\nUnchecked food groups")
+//        self.printFG(unchecked)
         self.resultsBarButtonItem.isEnabled = unchecked.count == 0 ? true : false
     }
     func printFG(_ foodGroups: [FoodGroup]) {
@@ -66,14 +66,15 @@ extension FoodGroupsTableViewController {
             let destinationVC = segue.destination as! FoodsTableViewController
             if indexPath.section == 0 {
                 //let foodGroup = foodGroups[newIndexPath.section][newIndexPath.row]
-                let foodGroup = foodGroups[indexPath.section].name
+                let foodGroup = foodGroups[indexPath.row].name
                 destinationVC.navigationItem.title = foodGroup
                 //destinationVC.foods = foods[newIndexPath.row]
                 destinationVC.foods = foodGroups[indexPath.row].foods
                 destinationVC.foodGroupIndex = indexPath.row
             }
         } else if segue.identifier == "ShowResults" {
-            
+            let destinationVC = segue.destination as! GeneralTableViewController
+            destinationVC.foodGroups = self.foodGroups
         } else if segue.identifier == "ShowExtraInformation" {
             //do sth
         }

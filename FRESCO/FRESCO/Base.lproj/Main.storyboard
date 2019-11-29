@@ -1066,13 +1066,13 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="cups" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p0O-uo-xgb">
-                                            <rect key="frame" x="231" y="111" width="102.5" height="15.5"/>
+                                            <rect key="frame" x="222.5" y="111" width="102.5" height="15.5"/>
                                             <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="13"/>
                                             <color key="textColor" systemColor="tertiaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="H4C-Ks-pF0">
-                                            <rect key="frame" x="256.5" y="72" width="51.5" height="34"/>
+                                            <rect key="frame" x="239.5" y="72" width="68.5" height="34"/>
                                             <color key="backgroundColor" systemColor="tertiarySystemBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <color key="textColor" name="CustomOrange"/>
                                             <fontDescription key="fontDescription" name="SFProText-Bold" family="SF Pro Text" pointSize="16"/>
@@ -1090,7 +1090,7 @@
                                         <constraint firstItem="H4C-Ks-pF0" firstAttribute="firstBaseline" secondItem="b9g-Zj-GHG" secondAttribute="firstBaseline" id="JGx-Z9-rpA"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="sr9-YP-pS4" secondAttribute="trailing" id="Pls-q7-oui"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="H4C-Ks-pF0" secondAttribute="trailing" constant="20" id="T7M-eS-T1b"/>
-                                        <constraint firstItem="H4C-Ks-pF0" firstAttribute="width" secondItem="tes-sQ-HCe" secondAttribute="width" multiplier="0.15" id="cBL-bb-Iom"/>
+                                        <constraint firstItem="H4C-Ks-pF0" firstAttribute="width" secondItem="tes-sQ-HCe" secondAttribute="width" multiplier="0.2" id="cBL-bb-Iom"/>
                                         <constraint firstItem="3Hx-fU-A55" firstAttribute="leading" secondItem="tes-sQ-HCe" secondAttribute="leading" constant="10" id="enV-NH-v93"/>
                                         <constraint firstItem="sr9-YP-pS4" firstAttribute="top" secondItem="tes-sQ-HCe" secondAttribute="topMargin" id="fm3-x3-Ba0"/>
                                         <constraint firstItem="KTZ-AT-3Qw" firstAttribute="top" secondItem="H81-8z-Bc9" secondAttribute="bottom" constant="5" id="g4T-P5-Dm5"/>

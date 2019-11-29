@@ -98,10 +98,10 @@ struct FCA {
         FoodGroup(name: "Lácteos", checked: false, foods:
         
             [
-                Food(name: "Leche/yogurt descremada", category: .lacteo, unit: .ml, eq: 1),
-                Food(name: "Leche/yogurt semidescremada", category: .lacteo, unit: .ml, eq: 1),
-                Food(name: "Leche/yogurt entera", category: .lacteo, unit: .ml, eq: 1),
-                Food(name: "Leche/yogurt con azúcar", category: .lacteo, unit: .ml, eq: 1)
+                Food(name: "Leche/yogurt descremada", category: .lacteo, unit: .tazas, eq: 1),
+                Food(name: "Leche/yogurt semidescremada", category: .lacteo, unit: .tazas, eq: 1),
+                Food(name: "Leche/yogurt entera", category: .lacteo, unit: .tazas, eq: 1),
+                Food(name: "Leche/yogurt con azúcar", category: .lacteo, unit: .tazas, eq: 1)
             ]
         
         ),
@@ -214,10 +214,10 @@ struct FCA {
             Food(name: "Queso oaxaca, manchego, gouda, parmesano", category: .origenAnimal, unit: .rebanadas, eq: 30)
         ],
         [
-            Food(name: "Leche/yogurt descremada", category: .lacteo, unit: .ml, eq: 1),
-            Food(name: "Leche/yogurt semidescremada", category: .lacteo, unit: .ml, eq: 1),
-            Food(name: "Leche/yogurt entera", category: .lacteo, unit: .ml, eq: 1),
-            Food(name: "Leche/yogurt con azúcar", category: .lacteo, unit: .ml, eq: 1)
+            Food(name: "Leche/yogurt descremada", category: .lacteo, unit: .tazas, eq: 1),
+            Food(name: "Leche/yogurt semidescremada", category: .lacteo, unit: .tazas, eq: 1),
+            Food(name: "Leche/yogurt entera", category: .lacteo, unit: .tazas, eq: 1),
+            Food(name: "Leche/yogurt con azúcar", category: .lacteo, unit: .tazas, eq: 1)
         ],
         [
             Food(name: "Azúcar de mesa", category: .azucar, unit: .cucharaditas, eq: 2),

@@ -37,6 +37,7 @@ enum FoodCategory: String, Codable {
     case oleaginosa
     case azucar
     case bebidaAlcoholica
+    case noCategory
 }
 
 enum Unit: String, Codable {

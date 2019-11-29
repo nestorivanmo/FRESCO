@@ -40,6 +40,8 @@
 		B29B4DF723857C65002C738E /* SF-Pro-Text-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = B29B4DE523857C65002C738E /* SF-Pro-Text-Black.otf */; };
 		B29B4DF823857C65002C738E /* SF-Pro-Text-LightItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = B29B4DE623857C65002C738E /* SF-Pro-Text-LightItalic.otf */; };
 		B29B4DF923857C65002C738E /* SF-Pro-Text-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = B29B4DE723857C65002C738E /* SF-Pro-Text-Medium.otf */; };
+		B2AEED7D2390E35500FFCC8A /* FoodGroupsHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AEED7C2390E35500FFCC8A /* FoodGroupsHandler.swift */; };
+		B2AEED7F2390E91800FFCC8A /* Equivalent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AEED7E2390E91800FFCC8A /* Equivalent.swift */; };
 		B2AF0D5D2385930E0011E57C /* FCA.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AF0D5C2385930E0011E57C /* FCA.swift */; };
 		B2B0DB5D2387245F00C34C0F /* IMC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B0DB5C2387245F00C34C0F /* IMC.swift */; };
 		B2B0DB5F2387249300C34C0F /* MathManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B0DB5E2387249300C34C0F /* MathManager.swift */; };
@@ -88,6 +90,8 @@
 		B29B4DE523857C65002C738E /* SF-Pro-Text-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Black.otf"; sourceTree = "<group>"; };
 		B29B4DE623857C65002C738E /* SF-Pro-Text-LightItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-LightItalic.otf"; sourceTree = "<group>"; };
 		B29B4DE723857C65002C738E /* SF-Pro-Text-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Medium.otf"; sourceTree = "<group>"; };
+		B2AEED7C2390E35500FFCC8A /* FoodGroupsHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodGroupsHandler.swift; sourceTree = "<group>"; };
+		B2AEED7E2390E91800FFCC8A /* Equivalent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Equivalent.swift; sourceTree = "<group>"; };
 		B2AF0D5C2385930E0011E57C /* FCA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FCA.swift; sourceTree = "<group>"; };
 		B2B0DB5C2387245F00C34C0F /* IMC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMC.swift; sourceTree = "<group>"; };
 		B2B0DB5E2387249300C34C0F /* MathManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathManager.swift; sourceTree = "<group>"; };
@@ -116,6 +120,8 @@
 			children = (
 				B22891E42387345F00B54E32 /* EnergyRequirement.swift */,
 				B22891E62387348600B54E32 /* MacroNutrient.swift */,
+				B2AEED7C2390E35500FFCC8A /* FoodGroupsHandler.swift */,
+				B2AEED7E2390E91800FFCC8A /* Equivalent.swift */,
 			);
 			path = CoreModels;
 			sourceTree = "<group>";
@@ -396,6 +402,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B25CF3F22386E0EE00737E5C /* GeneralTableViewController.swift in Sources */,
+				B2AEED7F2390E91800FFCC8A /* Equivalent.swift in Sources */,
 				B22891E223872FC300B54E32 /* ViewFormatter.swift in Sources */,
 				B2B0DB5D2387245F00C34C0F /* IMC.swift in Sources */,
 				B24FBD7F2388D0E30067DA77 /* Food.swift in Sources */,
@@ -414,6 +421,7 @@
 				B29B4DC2238578AE002C738E /* AppDelegate.swift in Sources */,
 				B22891E52387345F00B54E32 /* EnergyRequirement.swift in Sources */,
 				B2BCA51F2388FB94002EC885 /* FoodGroupsTableViewController.swift in Sources */,
+				B2AEED7D2390E35500FFCC8A /* FoodGroupsHandler.swift in Sources */,
 				B29B4DC4238578AE002C738E /* SceneDelegate.swift in Sources */,
 				B2D8F0612386F8A100350986 /* Patient.swift in Sources */,
 				B2C352412387A52D0036A185 /* FoodTableViewCell.swift in Sources */,
