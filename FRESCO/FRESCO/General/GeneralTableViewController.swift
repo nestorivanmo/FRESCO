@@ -26,6 +26,14 @@ class GeneralTableViewController: UITableViewController {
     @IBOutlet weak var hcGrIdealLabel: UILabel!
     @IBOutlet weak var protGrIdealLabel: UILabel!
     @IBOutlet weak var lipGrIdealLabel: UILabel!
+    
+    @IBOutlet weak var fcaTotalKcalLabel: UILabel!
+    @IBOutlet weak var fcaHCKcalLabel: UILabel!
+    @IBOutlet weak var fcaProtKcalLabel: UILabel!
+    @IBOutlet weak var fcaLipKcalLabel: UILabel!
+    @IBOutlet weak var fcaHCGrLabel: UILabel!
+    @IBOutlet weak var fcaProtGrlLabel: UILabel!
+    @IBOutlet weak var fcaLipGrLabel: UILabel!
 
     var patient: Patient?
     var imc: IMC?
@@ -99,6 +107,23 @@ extension GeneralTableViewController {
             guard let foodGroups = self.foodGroups else {return}
             let energyRequirement = foodGroupsHandler.process(foodGroups: foodGroups)
             foodGroupsHandler.printER(energyRequirement)
+            fcaTotalKcalLabel.text = String(energyRequirement.sumKcal ?? 0.0)
+            guard let nutrients = energyRequirement.nutrients else {return}
+            for n in nutrients {
+                let kCal = n.kCal
+                let grams = n.grams
+                switch n.type {
+                case .carboHydrate:
+                    fcaHCKcalLabel.text = String(kCal)
+                    fcaHCGrLabel.text = String(grams)
+                case .protein:
+                    fcaProtKcalLabel.text = String(kCal)
+                    fcaProtGrlLabel.text = String(grams)
+                case .lipid:
+                    fcaLipKcalLabel.text = String(kCal)
+                    fcaLipGrLabel.text = String(grams)
+                }
+            }
         }
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

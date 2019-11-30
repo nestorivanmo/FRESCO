@@ -9,7 +9,6 @@
 import Foundation
 
 struct FoodGroupsHandler {
-    
     func process(foodGroups: [FoodGroup]) -> EnergyRequirement{
         var equivalents = [Equivalent]()
         for group in foodGroups {
@@ -23,7 +22,6 @@ struct FoodGroupsHandler {
             equivalents.append(equivalent)
         }
         let equivalentsPerMacro = processEqs(equivalents)
-        printEq(equivalentsPerMacro)
         let energyRequirement = processEqsPerMacro(equivalentsPerMacro)
         return energyRequirement
     }
@@ -86,7 +84,7 @@ struct FoodGroupsHandler {
         case true:
             guard let quantity = food.quantity else {return 0.0}
             z = Double(times) * quantity
-        default:
+        default: //case false
             z = Double(times / 4)
         }
         let w = z / 7

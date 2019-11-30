@@ -74,6 +74,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <segue destination="Q7G-HI-62b" kind="show" id="Rlu-qS-ZIA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -114,7 +117,7 @@
                             <tableViewSection headerTitle="Paciente" id="k3c-zS-uCI">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="GeneralCell" rowHeight="44" id="RL1-dF-nc9">
-                                        <rect key="frame" x="16" y="55.5" width="343" height="44"/>
+                                        <rect key="frame" x="0.0" y="55.5" width="343" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="RL1-dF-nc9" id="9k1-cf-C2J">
                                             <rect key="frame" x="0.0" y="0.0" width="317" height="44"/>
@@ -587,6 +590,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" name="CustomTableViewCellColor"/>
+                                        <connections>
+                                            <segue destination="d2U-fx-eF7" kind="show" id="0jB-Wl-oFX"/>
+                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -605,6 +611,13 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="fcaHCGrLabel" destination="ktN-23-96r" id="hiu-Xg-qsU"/>
+                        <outlet property="fcaHCKcalLabel" destination="NAl-c5-doS" id="rm3-iA-xZC"/>
+                        <outlet property="fcaLipGrLabel" destination="v4c-hI-LNA" id="GNf-8l-6Nb"/>
+                        <outlet property="fcaLipKcalLabel" destination="cyf-wr-uAY" id="AQo-P8-KW6"/>
+                        <outlet property="fcaProtGrlLabel" destination="Po1-y6-3pc" id="4t9-Gd-TA5"/>
+                        <outlet property="fcaProtKcalLabel" destination="xzn-w0-uFG" id="SvE-MM-ASZ"/>
+                        <outlet property="fcaTotalKcalLabel" destination="at4-C8-0f5" id="iar-Zc-IDx"/>
                         <outlet property="hcGrIdealLabel" destination="nne-Yp-CSK" id="U0D-KT-apq"/>
                         <outlet property="hcKcalIdealLabel" destination="f2V-83-JXy" id="mLn-bK-wjI"/>
                         <outlet property="heartImageView" destination="6c1-MN-uUr" id="OZX-aN-RvO"/>
@@ -625,6 +638,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zFV-QN-T9l" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="8196" y="-66"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="TL9-LQ-4ym">
+            <objects>
+                <viewController id="d2U-fx-eF7" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mEe-b0-6PP">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="2Sp-Zp-1vi"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="l1Y-OB-I35">
+                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="BH6-2W-O8f"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="D1P-vg-JMJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="8196" y="605"/>
         </scene>
         <!--Datos Generales-->
         <scene sceneID="c0c-Hb-PqH">
@@ -1200,6 +1231,7 @@
             <objects>
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="Q7G-HI-62b" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="QpZ-ew-gfL"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="GCs-FX-doL">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -1264,6 +1296,7 @@
         </namedColor>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="Nmb-bk-Qta"/>
         <segue reference="ble-pa-UOA"/>
     </inferredMetricsTieBreakers>
 </document>
