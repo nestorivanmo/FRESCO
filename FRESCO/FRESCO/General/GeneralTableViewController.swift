@@ -39,6 +39,7 @@ class GeneralTableViewController: UITableViewController {
     var imc: IMC?
     var foodGroups: [FoodGroup]?
     let foodGroupsHandler = FoodGroupsHandler()
+    var realEnergyRequirement: EnergyRequirement?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,7 +59,6 @@ class GeneralTableViewController: UITableViewController {
         Patient.save(self.patient!)
         self.updateUIState()
     }
-
 }
 
 extension GeneralTableViewController {
@@ -105,13 +105,14 @@ extension GeneralTableViewController {
                 cell?.backgroundColor = UIColor(named: "CustomTableViewCellColor")
             }
             guard let foodGroups = self.foodGroups else {return}
-            let energyRequirement = foodGroupsHandler.process(foodGroups: foodGroups)
-            foodGroupsHandler.printER(energyRequirement)
-            fcaTotalKcalLabel.text = String(energyRequirement.sumKcal ?? 0.0)
-            guard let nutrients = energyRequirement.nutrients else {return}
+            self.realEnergyRequirement = foodGroupsHandler.process(foodGroups: foodGroups)
+            guard let realEnergyRequirement = self.realEnergyRequirement else {return}
+            foodGroupsHandler.printER(realEnergyRequirement)
+            fcaTotalKcalLabel.text = String(realEnergyRequirement.sumKcal?.rounded(toPlaces: 1) ?? 0.0)
+            guard let nutrients = realEnergyRequirement.nutrients else {return}
             for n in nutrients {
-                let kCal = n.kCal
-                let grams = n.grams
+                let kCal = n.kCal.rounded(toPlaces: 1)
+                let grams = n.grams.rounded(toPlaces: 1)
                 switch n.type {
                 case .carboHydrate:
                     fcaHCKcalLabel.text = String(kCal)
@@ -131,6 +132,14 @@ extension GeneralTableViewController {
             guard let patient = self.patient else {return}
             let destinationViewController = segue.destination as! DatosGeneralesTableViewController
             destinationViewController.patient = patient
+        } else if segue.identifier == "ShowComparison" {
+            let destinationVC = segue.destination as! ComparisonViewController
+            guard let realER = self.realEnergyRequirement else {return}
+            destinationVC.realEnergyRequirement = realER
+            guard let patient = self.patient else {return}
+            guard let idealER = patient.energyRequirement else {return}
+            destinationVC.idealEnergyRequirement = idealER
+            destinationVC.patient = patient
         }
     }
 }

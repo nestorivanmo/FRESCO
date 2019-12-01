@@ -49,6 +49,7 @@
 		B2BCA521238903AB002EC885 /* FoodsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2BCA520238903AB002EC885 /* FoodsTableViewController.swift */; };
 		B2C352412387A52D0036A185 /* FoodTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C352402387A52D0036A185 /* FoodTableViewCell.swift */; };
 		B2D47CF82386543400A067A7 /* IntroductionPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D47CF72386543400A067A7 /* IntroductionPageViewController.swift */; };
+		B2D61E9F2392149E003C6A0E /* ComparisonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D61E9E2392149E003C6A0E /* ComparisonViewController.swift */; };
 		B2D8F0612386F8A100350986 /* Patient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D8F0602386F8A100350986 /* Patient.swift */; };
 		B2EFA16E2386F6DB0092D998 /* FixedSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2EFA16D2386F6DB0092D998 /* FixedSize.swift */; };
 		B2F12BDC23890B010070DFFF /* FoodGroupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F12BDB23890B010070DFFF /* FoodGroupTableViewCell.swift */; };
@@ -99,6 +100,7 @@
 		B2BCA520238903AB002EC885 /* FoodsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodsTableViewController.swift; sourceTree = "<group>"; };
 		B2C352402387A52D0036A185 /* FoodTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodTableViewCell.swift; sourceTree = "<group>"; };
 		B2D47CF72386543400A067A7 /* IntroductionPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroductionPageViewController.swift; sourceTree = "<group>"; };
+		B2D61E9E2392149E003C6A0E /* ComparisonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComparisonViewController.swift; sourceTree = "<group>"; };
 		B2D8F0602386F8A100350986 /* Patient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Patient.swift; sourceTree = "<group>"; };
 		B2EFA16D2386F6DB0092D998 /* FixedSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixedSize.swift; sourceTree = "<group>"; };
 		B2F12BDB23890B010070DFFF /* FoodGroupTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodGroupTableViewCell.swift; sourceTree = "<group>"; };
@@ -139,7 +141,7 @@
 		B25CF3F02386E0CE00737E5C /* General */ = {
 			isa = PBXGroup;
 			children = (
-				B2EA673E238E14710029B300 /* Results */,
+				B2EA673E238E14710029B300 /* Comparison */,
 				B2D8F05F2386F89900350986 /* Models */,
 				B25CF3F32386E10900737E5C /* DatosGenerales */,
 				B25CF3F12386E0EE00737E5C /* GeneralTableViewController.swift */,
@@ -289,11 +291,12 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		B2EA673E238E14710029B300 /* Results */ = {
+		B2EA673E238E14710029B300 /* Comparison */ = {
 			isa = PBXGroup;
 			children = (
+				B2D61E9E2392149E003C6A0E /* ComparisonViewController.swift */,
 			);
-			path = Results;
+			path = Comparison;
 			sourceTree = "<group>";
 		};
 		B2EFA16C2386F6C90092D998 /* FixedSizes */ = {
@@ -408,6 +411,7 @@
 				B24FBD7F2388D0E30067DA77 /* Food.swift in Sources */,
 				B2B0DB5F2387249300C34C0F /* MathManager.swift in Sources */,
 				B2D47CF82386543400A067A7 /* IntroductionPageViewController.swift in Sources */,
+				B2D61E9F2392149E003C6A0E /* ComparisonViewController.swift in Sources */,
 				B2AF0D5D2385930E0011E57C /* FCA.swift in Sources */,
 				B2F12BDC23890B010070DFFF /* FoodGroupTableViewCell.swift in Sources */,
 				B217C029238FA35B004C6BA8 /* ExtraInformationViewController.swift in Sources */,
