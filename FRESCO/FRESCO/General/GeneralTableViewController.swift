@@ -128,7 +128,7 @@ extension GeneralTableViewController {
         }
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "EnterGeneralData" {
+        if segue.identifier == "EnterGeneralData" || segue.identifier == "ShowGDFromName"{
             guard let patient = self.patient else {return}
             let destinationViewController = segue.destination as! DatosGeneralesTableViewController
             destinationViewController.patient = patient
